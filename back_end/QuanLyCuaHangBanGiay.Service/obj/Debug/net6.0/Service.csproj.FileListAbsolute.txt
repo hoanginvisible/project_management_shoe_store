@@ -1,0 +1,11 @@
+D:\Learning .NET\QuanLySinhVien\Service\bin\Debug\net6.0\Service.deps.json
+D:\Learning .NET\QuanLySinhVien\Service\bin\Debug\net6.0\Service.dll
+D:\Learning .NET\QuanLySinhVien\Service\bin\Debug\net6.0\Service.pdb
+D:\Learning .NET\QuanLySinhVien\Service\obj\Debug\net6.0\Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\Learning .NET\QuanLySinhVien\Service\obj\Debug\net6.0\Service.AssemblyInfoInputs.cache
+D:\Learning .NET\QuanLySinhVien\Service\obj\Debug\net6.0\Service.AssemblyInfo.cs
+D:\Learning .NET\QuanLySinhVien\Service\obj\Debug\net6.0\Service.csproj.CoreCompileInputs.cache
+D:\Learning .NET\QuanLySinhVien\Service\obj\Debug\net6.0\Service.dll
+D:\Learning .NET\QuanLySinhVien\Service\obj\Debug\net6.0\refint\Service.dll
+D:\Learning .NET\QuanLySinhVien\Service\obj\Debug\net6.0\Service.pdb
+D:\Learning .NET\QuanLySinhVien\Service\obj\Debug\net6.0\ref\Service.dll
