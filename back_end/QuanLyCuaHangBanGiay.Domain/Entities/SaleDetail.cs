@@ -1,6 +1,6 @@
-﻿using QuanLyCuaHangBanGiay.Domain.Common;
+﻿using Domain.Common;
 
-namespace QuanLyCuaHangBanGiay.Domain.Entities
+namespace  Domain.Entities
 {
     public class SaleDetail : BaseAuditableEntity
     {

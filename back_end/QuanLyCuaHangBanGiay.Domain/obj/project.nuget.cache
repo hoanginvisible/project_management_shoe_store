@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YLFSTFpVl0hV3hAltq+l/ev9xRz9v9Re+mCvxkIXVgH4xtYl46hkd/bq6xJGweQrT5KCto3gZHyKk7YIIEdujw==",
+  "dgSpecHash": "4U3LG85sW9gOuNWPY9vDT8/oPtzO+9e0J+rwIGrtQVBShLfMkmkpnMCHdPdbJB6/ehkUeOCknloRPYnuwGYq4g==",
   "success": true,
-  "projectFilePath": "D:\\Learning .NET\\Project_Dot_Net\\QuanLyCuaHangBanGiay\\QuanLyCuaHangBanGiay.Domain\\QuanLyCuaHangBanGiay.Domain.csproj",
+  "projectFilePath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Domain\\QuanLyCuaHangBanGiay.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hoang\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.21\\microsoft.entityframeworkcore.6.0.21.nupkg.sha512",

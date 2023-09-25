@@ -1,4 +1,4 @@
-﻿namespace QuanLyCuaHangBanGiay.Domain.Common
+﻿namespace Domain.Common
 {
     public abstract class BaseAuditableEntity : BaseEntity
     {

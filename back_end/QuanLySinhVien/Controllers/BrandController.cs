@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using QuanLyCuaHangBanGiay.Domain.Entities;
-using QuanLySinhVien.Model;
-using Service;
+﻿using Domain.Entities;
+using Microsoft.AspNetCore.Mvc;
+using Service.Services.Interfaces;
 
 namespace QuanLyCuaHangBanGiay.Controllers
 {
@@ -40,7 +39,7 @@ namespace QuanLyCuaHangBanGiay.Controllers
             // return Ok(await _brandService.GetAllBrand());
             return Ok("get by id");
         }
-        
+
         [HttpPost]
         public IActionResult InsertBrand([FromBody] BrandModel brandModel)
         {
@@ -55,6 +54,7 @@ namespace QuanLyCuaHangBanGiay.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, "Lỗi serverf");
             }
+
             // await _brandService.Insert(brandModel);
             string name = brandModel.Name;
             return Ok(name);

@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using QuanLyCuaHangBanGiay.Domain.Common;
-using QuanLyCuaHangBanGiay.Domain.Constants;
+using Domain.Common;
+using Domain.Constants;
 
-namespace QuanLyCuaHangBanGiay.Domain.Entities
+namespace Domain.Entities
 {
     public class Image : BaseAuditableEntity
     {

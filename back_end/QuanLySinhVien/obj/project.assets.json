@@ -2662,11 +2662,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Learning .NET\\Project_Dot_Net\\QuanLyCuaHangBanGiay\\QuanLySinhVien\\QuanLyCuaHangBanGiay.WebAPI.csproj",
+      "projectUniqueName": "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLySinhVien\\QuanLyCuaHangBanGiay.WebAPI.csproj",
       "projectName": "QuanLyCuaHangBanGiay.WebAPI",
-      "projectPath": "D:\\Learning .NET\\Project_Dot_Net\\QuanLyCuaHangBanGiay\\QuanLySinhVien\\QuanLyCuaHangBanGiay.WebAPI.csproj",
+      "projectPath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLySinhVien\\QuanLyCuaHangBanGiay.WebAPI.csproj",
       "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-      "outputPath": "D:\\Learning .NET\\Project_Dot_Net\\QuanLyCuaHangBanGiay\\QuanLySinhVien\\obj\\",
+      "outputPath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLySinhVien\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2683,8 +2683,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Learning .NET\\Project_Dot_Net\\QuanLyCuaHangBanGiay\\QuanLyCuaHangBanGiay.Infrastructure\\QuanLyCuaHangBanGiay.Infrastructure.csproj": {
-              "projectPath": "D:\\Learning .NET\\Project_Dot_Net\\QuanLyCuaHangBanGiay\\QuanLyCuaHangBanGiay.Infrastructure\\QuanLyCuaHangBanGiay.Infrastructure.csproj"
+            "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Infrastructure\\QuanLyCuaHangBanGiay.Infrastructure.csproj": {
+              "projectPath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Infrastructure\\QuanLyCuaHangBanGiay.Infrastructure.csproj"
             }
           }
         }

@@ -150,7 +150,7 @@ export default function App() {
     <CacheProvider value={rtlCache}>
       <ThemeProvider theme={darkMode ? themeDarkRTL : themeRTL}>
         <CssBaseline />
-        {layout === "dashboard" && (
+        {layout === "AdminManagementProduct" && (
           <>
             <Sidenav
               color={sidenavColor}
@@ -174,7 +174,7 @@ export default function App() {
   ) : (
     <ThemeProvider theme={darkMode ? themeDark : theme}>
       <CssBaseline />
-      {layout === "dashboard" && (
+      {layout === "AdminManagementProduct" && (
         <>
           <Sidenav
             color={sidenavColor}

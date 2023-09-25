@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using QuanLyCuaHangBanGiay.Domain.Entities;
-using Service.Employer.Queries;
+using Service.Handlers.Employer.Queries;
 
-namespace Infrastructure.Login;
-
-public interface ITokenHandler
+namespace Infrastructure.Login
 {
-    Task<string> CreateToken(EmployerDto employerDto);
-    Task ValidationToken(TokenValidatedContext context);
+    public interface ITokenHandler
+    {
+        Task<string> CreateToken(EmployerDto employerDto);
+        Task ValidationToken(TokenValidatedContext context);
+    }
 }

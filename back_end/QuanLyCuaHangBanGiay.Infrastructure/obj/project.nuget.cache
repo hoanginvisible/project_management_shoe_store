@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y0GKp/b0FXZ1nAQLwkiKDWg/aj5Jh8ace0FoRP2DwUc0d7rl7VORxwF8/wf2CRlwmG6RhoQVA+3X8YjRzZ9qtQ==",
+  "dgSpecHash": "Pv4n5JMQoT94cHmO8F4fiTdD32qQy5DnLKOhtjBCqdm/KnbvwBtQe3sjWXcN2PqfvsStdt2o8dbauoLVWM1I3g==",
   "success": true,
-  "projectFilePath": "D:\\Learning .NET\\Project_Dot_Net\\QuanLyCuaHangBanGiay\\QuanLyCuaHangBanGiay.Infrastructure\\QuanLyCuaHangBanGiay.Infrastructure.csproj",
+  "projectFilePath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Infrastructure\\QuanLyCuaHangBanGiay.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hoang\\.nuget\\packages\\dapper\\2.0.151\\dapper.2.0.151.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

@@ -36,8 +36,8 @@ Coded by www.creative-tim.com
 */
 
 // Material Dashboard 2 React layouts
-// import Dashboard from "layouts/dashboard";
-import Dashboard from "layouts/dashboard/index";
+// import Dashboard from "layouts/AdminManagementProduct";
+import Dashboard from "./layouts/AdminManagementProduct/index";
 import Tables from "layouts/tables";
 import Billing from "layouts/billing";
 import RTL from "layouts/rtl";
@@ -53,9 +53,9 @@ const routes = [
   {
     type: "collapse",
     name: "Quản lí sản phẩm",
-    key: "dashboard",
+    key: "AdminManagementProduct",
     icon: <Icon fontSize="small">dashboard</Icon>,
-    route: "/dashboard",
+    route: "/AdminManagementProduct",
     component: <Dashboard />,
   },
   {

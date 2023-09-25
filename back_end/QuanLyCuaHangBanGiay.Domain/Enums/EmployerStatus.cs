@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace QuanLyCuaHangBanGiay.Domain.Enums
+namespace Domain.Enums
 {
     public enum EmployerStatus
     {

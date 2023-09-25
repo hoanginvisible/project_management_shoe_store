@@ -2150,11 +2150,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Learning .NET\\Project_Dot_Net\\QuanLyCuaHangBanGiay\\QuanLyCuaHangBanGiay.Service\\QuanLyCuaHangBanGiay.Service.csproj",
+      "projectUniqueName": "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Service\\QuanLyCuaHangBanGiay.Service.csproj",
       "projectName": "QuanLyCuaHangBanGiay.Service",
-      "projectPath": "D:\\Learning .NET\\Project_Dot_Net\\QuanLyCuaHangBanGiay\\QuanLyCuaHangBanGiay.Service\\QuanLyCuaHangBanGiay.Service.csproj",
+      "projectPath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Service\\QuanLyCuaHangBanGiay.Service.csproj",
       "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-      "outputPath": "D:\\Learning .NET\\Project_Dot_Net\\QuanLyCuaHangBanGiay\\QuanLyCuaHangBanGiay.Service\\obj\\",
+      "outputPath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2171,8 +2171,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Learning .NET\\Project_Dot_Net\\QuanLyCuaHangBanGiay\\QuanLyCuaHangBanGiay.Data\\QuanLyCuaHangBanGiay.Data.csproj": {
-              "projectPath": "D:\\Learning .NET\\Project_Dot_Net\\QuanLyCuaHangBanGiay\\QuanLyCuaHangBanGiay.Data\\QuanLyCuaHangBanGiay.Data.csproj"
+            "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Data\\QuanLyCuaHangBanGiay.Data.csproj": {
+              "projectPath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Data\\QuanLyCuaHangBanGiay.Data.csproj"
             }
           }
         }

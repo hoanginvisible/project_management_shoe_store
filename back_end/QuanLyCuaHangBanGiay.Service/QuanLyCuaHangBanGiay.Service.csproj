@@ -15,6 +15,12 @@
     <ProjectReference Include="..\QuanLyCuaHangBanGiay.Data\QuanLyCuaHangBanGiay.Data.csproj" />
 
 
+
+
+  <ItemGroup>
+    <Folder Include="Handlers\" />
+  </ItemGroup>
+
   </ItemGroup>
 
 

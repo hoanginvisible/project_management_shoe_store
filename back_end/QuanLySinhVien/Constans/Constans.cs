@@ -1,10 +1,14 @@
-﻿namespace QuanLySinhVien.Constans;
-
-public static class Constans
+﻿namespace QuanLyCuaHangBanGiay.Constans
 {
-    public class UrlPath
+    public static class Constans
     {
-        private UrlPath (){}
-        public static string URL_API_ADMIN = "api/admin";
+        public class UrlPath
+        {
+            private UrlPath()
+            {
+            }
+
+            public static string URL_API_ADMIN = "api/admin";
+        }
     }
 }

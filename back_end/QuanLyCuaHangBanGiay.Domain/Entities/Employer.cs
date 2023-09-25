@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using QuanLyCuaHangBanGiay.Domain.Common;
-using QuanLyCuaHangBanGiay.Domain.Constants;
-using QuanLyCuaHangBanGiay.Domain.Enums;
+using Domain.Common;
+using Domain.Constants;
+using Domain.Enums;
 
-namespace QuanLyCuaHangBanGiay.Domain.Entities
+namespace Domain.Entities
 {
     public class Employer : BaseAuditableEntity
     {

@@ -1,15 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
-using QuanLyCuaHangBanGiay.Domain.Entities;
+﻿using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
-namespace QuanLyCuaHangBanGiay.Data
+namespace Data
 {
     public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-    : base(options)
+            : base(options)
         {
-
         }
+
         #region DbSet
 
         public DbSet<Brand> Brand { get; set; }

@@ -1,4 +1,4 @@
-﻿namespace QuanLyCuaHangBanGiay.Domain.Constants
+﻿namespace Domain.Constants
 {
     public static class EntityProperties
     {
