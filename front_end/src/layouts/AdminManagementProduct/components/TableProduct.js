@@ -1,77 +1,108 @@
-import React from "react";
-import { Space, Table, Tag } from "antd";
+import React, {useEffect, useState} from "react";
+import {Space, Table} from "antd";
+import {APIProductManagerment} from "../api/APIProductManagement";
+import {faPenToSquare, faTrash,} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+
 const columns = [
-  {
-    title: "STT",
-    dataIndex: "stt",
-    key: "stt",
-    render: (text) => <a>{text}</a>,
-  },
-  {
-    title: "Name",
-    dataIndex: "name",
-    key: "name",
-  },
-  {
-    title: "Address",
-    dataIndex: "address",
-    key: "address",
-  },
-  {
-    title: "Tags",
-    key: "tags",
-    dataIndex: "tags",
-    render: (_, { tags }) => (
-      <>
-        {tags.map((tag) => {
-          let color = tag.length > 5 ? "geekblue" : "green";
-          if (tag === "loser") {
-            color = "volcano";
-          }
-          return (
-            <Tag color={color} key={tag}>
-              {tag.toUpperCase()}
-            </Tag>
-          );
-        })}
-      </>
-    ),
-  },
-  {
-    title: "Action",
-    key: "action",
-    render: (_, record) => (
-      <Space size="middle">
-        <a>Invite {record.name}</a>
-        <a>Delete</a>
-      </Space>
-    ),
-  },
-];
-const data = [
-  {
-    key: "1",
-    name: "John Brown",
-    age: 32,
-    address: "New York No. 1 Lake Park",
-    tags: ["nice", "developer"],
-  },
-  {
-    key: "2",
-    name: "Jim Green",
-    age: 42,
-    address: "London No. 1 Lake Park",
-    tags: ["loser"],
-  },
-  {
-    key: "3",
-    name: "Joe Black",
-    age: 32,
-    address: "Sydney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-  },
+    {
+        title: "STT",
+        dataIndex: "stt",
+        key: "stt",
+        render: (text) => <a>{text}</a>,
+    },
+    {
+        title: "Name",
+        dataIndex: "nameProduct",
+        key: "nameProduct",
+    },
+    {
+        title: "Brand",
+        dataIndex: "nameBrand",
+        key: "nameBrand",
+    },
+    ,
+    {
+        title: "Category",
+        dataIndex: "nameCategory",
+        key: "nameCategory",
+    },
+    ,
+    {
+        title: "Color",
+        dataIndex: "nameColor",
+        key: "nameColor",
+    }, ,
+    {
+        title: "Image",
+        dataIndex: "image",
+        key: "image",
+    },
+    ,
+    {
+        title: "Material",
+        dataIndex: "nameMaterial",
+        key: "nameMaterial",
+    },
+    ,
+    {
+        title: "Brand",
+        dataIndex: "nameBrand",
+        key: "nameBrand",
+    },
+    {
+        title: "Price",
+        dataIndex: "price",
+        key: "price",
+    },
+    {
+        title: "Quantity",
+        dataIndex: "quantity",
+        key: "quantity",
+    },
+    // {
+    //     title: "Trạng thái",
+    //     key: "tags",
+    //     dataIndex: "tags",
+    //     render: (_, {tags}) => (
+    //         <>
+    //             {tags.map((tag) => {
+    //                 let color = tag.length > 5 ? "geekblue" : "green";
+    //                 if (tag === "loser") {
+    //                     color = "volcano";
+    //                 }
+    //                 return (
+    //                     <Tag color={color} key={tag}>
+    //                         {tag.toUpperCase()}
+    //                     </Tag>
+    //                 );
+    //             })}
+    //         </>
+    //     ),
+    // },
+    {
+        title: "Action",
+        key: "action",
+        render: (_, record) => (
+            <Space size="middle">
+                <FontAwesomeIcon icon={faPenToSquare} style={{color: "#0866ff"}} title={"Sửa"}/>
+                <FontAwesomeIcon icon={faTrash} style={{color: "#ff0000"}} title={"Xóa"}/>
+            </Space>
+        ),
+    },
 ];
 const TableProduct = () => {
-  return <Table columns={columns} dataSource={data} />;
+    const [listProduct, setListProduct] = useState([]);
+    useEffect(() => {
+        APIProductManagerment.getProductDetails()
+            .then((response) => {
+                setListProduct(response.data);
+                console.log(response)
+            })
+            .catch((error) => {
+                console.log(error)
+            });
+    }, []);
+    return <Table columns={columns} dataSource={listProduct} scroll={{ x: '100vw' }} />;
 };
 export default TableProduct;

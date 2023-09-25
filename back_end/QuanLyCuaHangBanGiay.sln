@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.WebAPI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.Domain", "QuanLyCuaHangBanGiay.Domain\QuanLyCuaHangBanGiay.Domain.csproj", "{479A3008-9D08-4825-8DFA-4988F42CE562}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.Service", "QuanLyCuaHangBanGiay.Service\QuanLyCuaHangBanGiay.Service.csproj", "{0DB47B42-179B-41EC-B831-B50E83775D46}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.Application", "QuanLyCuaHangBanGiay.Application\QuanLyCuaHangBanGiay.Application.csproj", "{0DB47B42-179B-41EC-B831-B50E83775D46}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.Data", "QuanLyCuaHangBanGiay.Data\QuanLyCuaHangBanGiay.Data.csproj", "{5F6638EF-C9F9-4DEB-B53E-B7B75968D412}"
 EndProject

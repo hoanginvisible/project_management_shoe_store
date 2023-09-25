@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using QuanLySinhVien;
 
-namespace QuanLySinhVien.Controllers
+namespace QuanLyCuaHangBanGiay.Controllers
 {
     [ApiController]
     [Route("[controller]")]

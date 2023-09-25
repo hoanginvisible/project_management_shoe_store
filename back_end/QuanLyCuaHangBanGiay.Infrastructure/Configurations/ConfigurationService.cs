@@ -1,15 +1,10 @@
-﻿using System.Reflection;
+﻿using Application.Handlers.ProductDetail.Queries;
 using Data;
 using Data.Interfaces;
 using Infrastructure.Login;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Service.Handlers.Employer.Queries;
-using Service.Handlers.ProductDetail.Queries;
-using Service.Services.Implementations;
-using Service.Services.Interfaces;
 
 namespace Infrastructure.Configurations
 {
@@ -29,21 +24,15 @@ namespace Infrastructure.Configurations
         {
             service.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             service.AddScoped<IDapperHelper, DapperHelper>();
-            service.AddScoped<IBrandService, BrandService>();
-            service.AddScoped<IProductDetailService, ProductDetailService>();
-            service.AddScoped<IEmployerService, EmployerService>();
+            // service.AddScoped<IBrandService, BrandService>();
+            // service.AddScoped<IProductDetailService, ProductDetailService>();
+            // service.AddScoped<IEmployerService, EmployerService>();
             service.AddScoped<ITokenHandler, TokenHandler>();
         }
 
         public static void RegisterMediatR(this IServiceCollection service)
         {
-            service.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
-            service
-                .AddScoped<IRequestHandler<GetProductDetailsQuery, IEnumerable<ProductDetailDto>>,
-                    GetProductDetailsQueryHandler>();
-            service
-                .AddScoped<IRequestHandler<GetEmployerQuery, EmployerDto>,
-                    GetEmployerQueryHandle>();
+            service.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(GetProductDetailsQueryHandler).Assembly));
         }
     }
 }

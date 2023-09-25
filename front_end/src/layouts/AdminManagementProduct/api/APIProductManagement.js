@@ -1,11 +1,13 @@
 import { request } from "helper/Request.helper";
-// import
+import { URL_API_ADMIN } from "layouts/ApiUrl";
 
-export default class APIProductManagerment {
-  static getProductDetails() {
-    return request({
-      method: "GET",
-      url: URL_API_ORGANIZER_MANAGEMENT + "/event-detail",
-    });
-  }
+const api = URL_API_ADMIN + "product-management/";
+export class APIProductManagerment {
+
+    static getProductDetails() {
+        return request({
+            method: "GET",
+            url: api + "get-all-product",
+        });
+    }
 }

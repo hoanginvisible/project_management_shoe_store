@@ -10,8 +10,8 @@
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.22",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.21",
-          "QuanLyCuaHangBanGiay.Data": "1.0.0",
-          "QuanLyCuaHangBanGiay.Service": "1.0.0"
+          "QuanLyCuaHangBanGiay.Application": "1.0.0",
+          "QuanLyCuaHangBanGiay.Data": "1.0.0"
         },
         "runtime": {
           "QuanLyCuaHangBanGiay.Infrastructure.dll": {}
@@ -485,6 +485,15 @@
           }
         }
       },
+      "QuanLyCuaHangBanGiay.Application/1.0.0": {
+        "dependencies": {
+          "MediatR": "12.1.1",
+          "QuanLyCuaHangBanGiay.Data": "1.0.0"
+        },
+        "runtime": {
+          "QuanLyCuaHangBanGiay.Application.dll": {}
+        }
+      },
       "QuanLyCuaHangBanGiay.Data/1.0.0": {
         "dependencies": {
           "Dapper": "2.0.151",
@@ -505,15 +514,6 @@
         },
         "runtime": {
           "QuanLyCuaHangBanGiay.Domain.dll": {}
-        }
-      },
-      "QuanLyCuaHangBanGiay.Service/1.0.0": {
-        "dependencies": {
-          "MediatR": "12.1.1",
-          "QuanLyCuaHangBanGiay.Data": "1.0.0"
-        },
-        "runtime": {
-          "QuanLyCuaHangBanGiay.Service.dll": {}
         }
       }
     }
@@ -853,17 +853,17 @@
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
+    "QuanLyCuaHangBanGiay.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "QuanLyCuaHangBanGiay.Data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "QuanLyCuaHangBanGiay.Domain/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "QuanLyCuaHangBanGiay.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

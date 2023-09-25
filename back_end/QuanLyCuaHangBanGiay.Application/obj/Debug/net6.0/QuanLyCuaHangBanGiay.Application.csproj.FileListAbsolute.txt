@@ -1,0 +1,17 @@
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Application\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Application.deps.json
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Application\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Application.dll
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Application\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Application.pdb
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Application\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Data.dll
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Application\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Domain.dll
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Application\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Data.pdb
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Application\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Domain.pdb
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Application\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Application.csproj.AssemblyReference.cache
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Application\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Application\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Application.AssemblyInfoInputs.cache
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Application\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Application.AssemblyInfo.cs
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Application\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Application.csproj.CoreCompileInputs.cache
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Application\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Application.csproj.CopyComplete
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Application\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Application.dll
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Application\obj\Debug\net6.0\refint\QuanLyCuaHangBanGiay.Application.dll
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Application\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Application.pdb
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Application\obj\Debug\net6.0\ref\QuanLyCuaHangBanGiay.Application.dll

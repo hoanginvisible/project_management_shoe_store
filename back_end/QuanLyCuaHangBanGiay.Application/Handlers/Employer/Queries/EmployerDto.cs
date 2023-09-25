@@ -1,4 +1,4 @@
-﻿namespace Service.Handlers.Employer.Queries
+﻿namespace Application.Handlers.Employer.Queries
 {
     public class EmployerDto
     {

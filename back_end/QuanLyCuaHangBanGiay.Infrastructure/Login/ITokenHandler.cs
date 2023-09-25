@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Service.Handlers.Employer.Queries;
+﻿using Application.Handlers.Employer.Queries;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace Infrastructure.Login
 {

@@ -3,15 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace QuanLyCuaHangBanGiay.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
-    public class BaseApiController : ControllerBase
+    public class ApiControllerBase : ControllerBase
     {
-        private readonly IMediator _mediator;
-
-        public BaseApiController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
+        private ISender? _mediator;
+        protected ISender Mediator => _mediator ??= HttpContext.RequestServices.GetRequiredService<ISender>();
     }
 }

@@ -1,7 +1,6 @@
 const domain = "https://localhost:7016/";
-export const URL_API_PARTICIPANT = domain + "api/home";
-export const URL_API_ORGANIZER_MANAGEMENT = domain + "api/organizer-management";
-export const URL_API_APRROVER_MANAGEMENT = domain + "api/approver-management";
+export const URL_API_ADMIN = domain + "api/admin/";
+export const URL_API_USER = domain + "api/user/";
 
 // class CommonAPI {
 //   static ADD = "/add";

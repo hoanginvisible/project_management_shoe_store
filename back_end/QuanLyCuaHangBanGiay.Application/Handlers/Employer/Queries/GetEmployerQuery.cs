@@ -2,7 +2,7 @@
 using Data.Interfaces;
 using MediatR;
 
-namespace Service.Handlers.Employer.Queries
+namespace Application.Handlers.Employer.Queries
 {
     public record GetEmployerQuery : IRequest<EmployerDto>
     {

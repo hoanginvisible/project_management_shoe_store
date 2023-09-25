@@ -40,3 +40,17 @@ D:\Learning .NET\Git_cua_hang_ban_giay\project_management_shoe_store\QuanLyCuaHa
 D:\Learning .NET\Git_cua_hang_ban_giay\project_management_shoe_store\QuanLyCuaHangBanGiay\QuanLyCuaHangBanGiay.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Domain.pdb
 D:\Learning .NET\Git_cua_hang_ban_giay\project_management_shoe_store\QuanLyCuaHangBanGiay\QuanLyCuaHangBanGiay.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Domain.genruntimeconfig.cache
 D:\Learning .NET\Git_cua_hang_ban_giay\project_management_shoe_store\QuanLyCuaHangBanGiay\QuanLyCuaHangBanGiay.Domain\obj\Debug\net6.0\ref\QuanLyCuaHangBanGiay.Domain.dll
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Domain\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Domain.deps.json
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Domain\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Domain.runtimeconfig.json
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Domain\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Domain.dll
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Domain\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Domain.pdb
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Domain.csproj.AssemblyReference.cache
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Domain.AssemblyInfoInputs.cache
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Domain.AssemblyInfo.cs
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Domain.csproj.CoreCompileInputs.cache
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Domain.dll
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Domain\obj\Debug\net6.0\refint\QuanLyCuaHangBanGiay.Domain.dll
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Domain.pdb
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Domain.genruntimeconfig.cache
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Domain\obj\Debug\net6.0\ref\QuanLyCuaHangBanGiay.Domain.dll

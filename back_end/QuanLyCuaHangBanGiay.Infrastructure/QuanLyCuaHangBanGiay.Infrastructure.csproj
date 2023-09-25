@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\QuanLyCuaHangBanGiay.Data\QuanLyCuaHangBanGiay.Data.csproj" />
-    <ProjectReference Include="..\QuanLyCuaHangBanGiay.Service\QuanLyCuaHangBanGiay.Service.csproj" />
+    <ProjectReference Include="..\QuanLyCuaHangBanGiay.Application\QuanLyCuaHangBanGiay.Application.csproj" />
   </ItemGroup>
 
 

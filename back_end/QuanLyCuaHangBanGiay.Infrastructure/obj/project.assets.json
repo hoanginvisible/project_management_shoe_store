@@ -845,6 +845,20 @@
           }
         }
       },
+      "QuanLyCuaHangBanGiay.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "MediatR": "12.1.1",
+          "QuanLyCuaHangBanGiay.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/QuanLyCuaHangBanGiay.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/QuanLyCuaHangBanGiay.Application.dll": {}
+        }
+      },
       "QuanLyCuaHangBanGiay.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -875,20 +889,6 @@
         },
         "runtime": {
           "bin/placeholder/QuanLyCuaHangBanGiay.Domain.dll": {}
-        }
-      },
-      "QuanLyCuaHangBanGiay.Service/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "MediatR": "12.1.1",
-          "QuanLyCuaHangBanGiay.Data": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/QuanLyCuaHangBanGiay.Service.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/QuanLyCuaHangBanGiay.Service.dll": {}
         }
       }
     }
@@ -2187,6 +2187,11 @@
         "version.txt"
       ]
     },
+    "QuanLyCuaHangBanGiay.Application/1.0.0": {
+      "type": "project",
+      "path": "../QuanLyCuaHangBanGiay.Application/QuanLyCuaHangBanGiay.Application.csproj",
+      "msbuildProject": "../QuanLyCuaHangBanGiay.Application/QuanLyCuaHangBanGiay.Application.csproj"
+    },
     "QuanLyCuaHangBanGiay.Data/1.0.0": {
       "type": "project",
       "path": "../QuanLyCuaHangBanGiay.Data/QuanLyCuaHangBanGiay.Data.csproj",
@@ -2196,19 +2201,14 @@
       "type": "project",
       "path": "../QuanLyCuaHangBanGiay.Domain/QuanLyCuaHangBanGiay.Domain.csproj",
       "msbuildProject": "../QuanLyCuaHangBanGiay.Domain/QuanLyCuaHangBanGiay.Domain.csproj"
-    },
-    "QuanLyCuaHangBanGiay.Service/1.0.0": {
-      "type": "project",
-      "path": "../QuanLyCuaHangBanGiay.Service/QuanLyCuaHangBanGiay.Service.csproj",
-      "msbuildProject": "../QuanLyCuaHangBanGiay.Service/QuanLyCuaHangBanGiay.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.22",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.21",
-      "QuanLyCuaHangBanGiay.Data >= 1.0.0",
-      "QuanLyCuaHangBanGiay.Service >= 1.0.0"
+      "QuanLyCuaHangBanGiay.Application >= 1.0.0",
+      "QuanLyCuaHangBanGiay.Data >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2238,11 +2238,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Application\\QuanLyCuaHangBanGiay.Application.csproj": {
+              "projectPath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Application\\QuanLyCuaHangBanGiay.Application.csproj"
+            },
             "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Data\\QuanLyCuaHangBanGiay.Data.csproj": {
               "projectPath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Data\\QuanLyCuaHangBanGiay.Data.csproj"
-            },
-            "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Service\\QuanLyCuaHangBanGiay.Service.csproj": {
-              "projectPath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Service\\QuanLyCuaHangBanGiay.Service.csproj"
             }
           }
         }

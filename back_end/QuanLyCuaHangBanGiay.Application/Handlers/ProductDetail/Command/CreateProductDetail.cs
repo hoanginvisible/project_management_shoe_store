@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Service.Handlers.ProductDetail.Command
+namespace Application.Handlers.ProductDetail.Command
 {
     public class CreateProductDetail : IRequest<Boolean>
     {
