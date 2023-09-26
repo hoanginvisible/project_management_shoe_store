@@ -25,6 +25,14 @@
           }
         }
       },
+      "FluentValidation/11.7.1": {
+        "runtime": {
+          "lib/net6.0/FluentValidation.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.7.1.0"
+          }
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -487,6 +495,7 @@
       },
       "QuanLyCuaHangBanGiay.Application/1.0.0": {
         "dependencies": {
+          "FluentValidation": "11.7.1",
           "MediatR": "12.1.1",
           "QuanLyCuaHangBanGiay.Data": "1.0.0"
         },
@@ -530,6 +539,13 @@
       "sha512": "sha512-mMcZgx1lim0/i1Ozu+lgnBM4GwNIHpCuxV6BV2ovsEfZAXRAq4jb6RIhxGDcVjtmXMLPpdp85jHPdDjBMMwejw==",
       "path": "dapper/2.0.151",
       "hashPath": "dapper.2.0.151.nupkg.sha512"
+    },
+    "FluentValidation/11.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-w9Al4gls6iVGFbTd/NPOPlwzqDTghH+ntL4c4FYUatc+LeybpIwhYArLykZJP/VjF2n3ihj3ws+1yd7KR5lQlg==",
+      "path": "fluentvalidation/11.7.1",
+      "hashPath": "fluentvalidation.11.7.1.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",

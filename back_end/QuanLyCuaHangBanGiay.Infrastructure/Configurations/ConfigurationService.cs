@@ -1,10 +1,17 @@
-﻿using Application.Handlers.ProductDetail.Queries;
+﻿using Application.Handlers.ProductDetail.Command;
+using Application.Handlers.ProductDetail.Queries;
 using Data;
 using Data.Interfaces;
+using FluentValidation;
 using Infrastructure.Login;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Service.Common.Behaviors;
+using Service.Common.Validator;
+
+// using Service.Common.Behaviors;
 
 namespace Infrastructure.Configurations
 {
@@ -33,6 +40,14 @@ namespace Infrastructure.Configurations
         public static void RegisterMediatR(this IServiceCollection service)
         {
             service.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(GetProductDetailsQueryHandler).Assembly));
+            service.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CreateProductDetailCommand).Assembly));
+        }
+
+        public static void RegisterFluentValidation(this IServiceCollection service)
+        {
+            service.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidatorBehavior<,>));
+            // service.AddTransient<IValidator<CreateProductDetailCommand>, AddProductDetailCommandValidator>();        }
+            service.AddTransient<IValidator<CreateProductDetailCommand>, AddProductDetailCommandValidator>();
         }
     }
 }

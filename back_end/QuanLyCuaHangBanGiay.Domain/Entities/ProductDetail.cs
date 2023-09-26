@@ -1,17 +1,18 @@
-﻿using Domain.Common;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using Domain.Common;
 
 namespace Domain.Entities
 {
     public class ProductDetail : BaseAuditableEntity
     {
-        public Guid IdProduct { get; set; }
-        public Guid IdBrand { get; set; }
-        public Guid IdCategory { get; set; }
-        public Guid IdColor { get; set; }
-        public Guid IdImage { get; set; }
-        public Guid IdMaterial { get; set; }
-        public Guid IdSize { get; set; }
-        public decimal Price { get; set; }
+        public string IdProduct { get; set; }
+        public string IdBrand { get; set; }
+        public string IdCategory { get; set; }
+        public string IdColor { get; set; }
+        public string IdImage { get; set; }
+        public string IdMaterial { get; set; }
+        public string IdSize { get; set; }
+        public Double Price { get; set; }
         public long Quantity { get; set; }
     }
 }

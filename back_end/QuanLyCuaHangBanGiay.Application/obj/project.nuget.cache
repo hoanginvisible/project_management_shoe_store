@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Q1c//5ZyZ8pVu5tPuX/pKxAFQpIxxxeBmsDCBKEu56tUyBOAmI3g3wLjbVKn9fwwPnDA4Be6gUv1dXmISybJuA==",
+  "dgSpecHash": "6EiOz+dNL/p/Vv0pH+LstokGBH5hz0raCP7vXpubY2W1l0cDwj4TZo7Trald8weGoumJ5tkeMXIZ0AJhS8MJBA==",
   "success": true,
   "projectFilePath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Application\\QuanLyCuaHangBanGiay.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hoang\\.nuget\\packages\\dapper\\2.0.151\\dapper.2.0.151.nupkg.sha512",
+    "C:\\Users\\hoang\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",

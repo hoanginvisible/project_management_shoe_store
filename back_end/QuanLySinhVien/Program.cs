@@ -18,8 +18,11 @@ builder.Services.RegisterDI();
 // Register handler MediatR
 builder.Services.RegisterMediatR();
 
+// Register fluentvalidation
+// builder.Services.RegisterFluentValidation();
+
 // Register Authentication Token
-builder.Services.RegisterTokenBear(builder.Configuration);
+// builder.Services.RegisterTokenBear(builder.Configuration);
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.

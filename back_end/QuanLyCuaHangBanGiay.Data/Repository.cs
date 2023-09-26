@@ -29,7 +29,7 @@ namespace Data
             var result = await _applicationDbContext.Set<T>().FindAsync(id);
             if (result == null)
             {
-                throw new NullReferenceException();
+                return null;
             }
 
             return result;
@@ -40,7 +40,15 @@ namespace Data
             // _ApplicationDbContext.Set<T>() dung de tra ve cac doi tuong duoc insert
             // AddAsync(entity) tao ra cac cau insert vao co so du lieu
             await _applicationDbContext.Set<T>().AddRangeAsync(entity);
-            await Commit();
+            _applicationDbContext.SaveChanges();
+        }
+
+        public async Task Insert(T entity)
+        {
+            // _ApplicationDbContext.Set<T>() dung de tra ve cac doi tuong duoc insert
+            // AddAsync(entity) tao ra cac cau insert vao co so du lieu
+            await _applicationDbContext.Set<T>().AddAsync(entity);
+            _applicationDbContext.SaveChanges();
         }
 
         public void Update(T entity)
@@ -70,10 +78,6 @@ namespace Data
         }
 
         public virtual IQueryable<T> Table => _applicationDbContext.Set<T>();
-
-        public async Task Commit()
-        {
-            await _applicationDbContext.SaveChangesAsync();
-        }
     }
 }
+

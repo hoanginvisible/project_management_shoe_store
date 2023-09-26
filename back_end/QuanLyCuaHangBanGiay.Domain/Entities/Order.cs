@@ -6,15 +6,15 @@ namespace Domain.Entities
 {
     public class Order : BaseAuditableEntity
     {
-        public Guid IdCustomer { get; set; }
-        public Guid IdEmployer { get; set; }
+        public string IdCustomer { get; set; }
+        public string IdEmployer { get; set; }
 
         [MaxLength(EntityProperties.LENGTH_CODE)]
         public string Code { get; set; }
 
-        public decimal CustomerPayment { get; set; }
-        public decimal BankTransfer { get; set; }
-        public decimal ChangeAmount { get; set; }
-        public decimal TotalAmount { get; set; }
+        public Double CustomerPayment { get; set; }
+        public Double BankTransfer { get; set; }
+        public Double ChangeAmount { get; set; }
+        public Double TotalAmount { get; set; }
     }
 }

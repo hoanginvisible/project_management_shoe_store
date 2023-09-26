@@ -8,13 +8,13 @@ namespace Domain.Entities
 
 
     {
-        public Guid IdOrder { get; set; }
-        public Guid IdProductDetail { get; set; }
+        public string IdOrder { get; set; }
+        public string IdProductDetail { get; set; }
 
         [MaxLength(EntityProperties.LENGTH_NAME)]
         public string NameProduct { get; set; }
 
-        public decimal Sale { get; set; }
-        public decimal Price { get; set; }
+        public Double Sale { get; set; }
+        public Double Price { get; set; }
     }
 }

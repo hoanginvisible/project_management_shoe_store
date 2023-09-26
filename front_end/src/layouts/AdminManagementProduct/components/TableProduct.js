@@ -37,6 +37,13 @@ const columns = [
         title: "Image",
         dataIndex: "image",
         key: "image",
+        render: (image) => (
+            <img
+                src={image}
+                width={100}
+                height={100}
+            />
+        )
     },
     ,
     {

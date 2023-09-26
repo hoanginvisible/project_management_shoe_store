@@ -1,6 +1,8 @@
-﻿using Application.Handlers.ProductDetail.Queries;
+﻿using Application.Handlers.ProductDetail.Command;
+using Application.Handlers.ProductDetail.Queries;
 using Infrastructure.Login;
 using Microsoft.AspNetCore.Mvc;
+using Service.Common.Validator;
 using Service.Handlers.ProductDetail.Queries;
 
 namespace QuanLyCuaHangBanGiay.Controllers
@@ -9,8 +11,6 @@ namespace QuanLyCuaHangBanGiay.Controllers
     [Route("api/admin/product-management")]
     public class ProductDetailController : ApiControllerBase
     {
-        // private static string URL = Constans.UrlPath.URL_API_ADMIN.ToString() + "/product-management";
-        private string URL = "api/admin/product-management";
         private readonly ITokenHandler _tokenHandler;
 
         public ProductDetailController(ITokenHandler tokenHandler)
@@ -28,6 +28,31 @@ namespace QuanLyCuaHangBanGiay.Controllers
         public async Task<IEnumerable<ProductDetailDto>> GetAllProductDetails()
         {
             return await Mediator.Send(new GetAllProductDetailQuery());
+        }
+
+        [HttpPost("create-product")]
+        public async Task<IActionResult> Insert([FromBody] CreateProductDetailCommand productDetailCommand)
+        {
+            AddProductDetailCommandValidator validation = new();
+            var results = await validation.ValidateAsync(productDetailCommand);
+            if (!results.IsValid)
+            {
+                string builder = "";
+                foreach (var failure in results.Errors)
+                {
+                    builder += (failure.PropertyName + failure.ErrorMessage + "\n");
+                }
+                return BadRequest(builder);
+                // return BadRequest(new Reponse("dau buoi", false));
+            }
+            await Mediator.Send(productDetailCommand);
+            return Ok();
+        }
+
+        [HttpDelete("delete-product")]
+        public async Task<IActionResult> Delete([FromQuery] string id)
+        {
+            return Ok(await Mediator.Send(new DeleteProductDetailCommand { id = id }));
         }
 
         // [HttpPost("login")]
