@@ -1,7 +1,7 @@
 ﻿using Application.Handlers.ProductDetail.Command;
 using FluentValidation;
 
-namespace Service.Common.Validator
+namespace Service.Common.Validator.ProductDetail
 {
     public class AddProductDetailCommandValidator : AbstractValidator<CreateProductDetailCommand>
     {

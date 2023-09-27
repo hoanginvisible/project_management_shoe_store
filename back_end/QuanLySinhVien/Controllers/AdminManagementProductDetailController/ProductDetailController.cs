@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Service.Common.Validator;
 using Service.Handlers.ProductDetail.Queries;
 
-namespace QuanLyCuaHangBanGiay.Controllers
+namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetail
 {
     // [Authorize]
     [Route("api/admin/product-management")]
