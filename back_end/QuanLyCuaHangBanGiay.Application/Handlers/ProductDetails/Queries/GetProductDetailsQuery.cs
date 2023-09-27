@@ -1,9 +1,8 @@
 ﻿using Dapper;
 using Data.Interfaces;
 using MediatR;
-using Service.Handlers.ProductDetail.Queries;
 
-namespace Application.Handlers.ProductDetail.Queries
+namespace Service.Handlers.ProductDetails.Queries
 {
     public record GetProductDetailsQuery : IRequest<IEnumerable<ProductDetailDto>> //Tham số trong IRquest là kiểu
         // dữ liệu mà nó trả về

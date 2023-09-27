@@ -1,6 +1,4 @@
-﻿using Application.Handlers.ProductDetail.Command;
-using Application.Handlers.ProductDetail.Queries;
-using Data;
+﻿using Data;
 using Data.Interfaces;
 using FluentValidation;
 using Infrastructure.Login;
@@ -9,7 +7,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Service.Common.Behaviors;
-using Service.Common.Validator;
+using Service.Common.Validators.ProductDetails;
+using Service.Handlers.ProductDetails.Command;
+using Service.Handlers.ProductDetails.Queries;
 
 // using Service.Common.Behaviors;
 

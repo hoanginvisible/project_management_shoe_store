@@ -80,4 +80,3 @@ namespace Data
         public virtual IQueryable<T> Table => _applicationDbContext.Set<T>();
     }
 }
-

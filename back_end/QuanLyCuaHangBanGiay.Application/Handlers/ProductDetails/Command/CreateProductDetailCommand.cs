@@ -1,9 +1,10 @@
 ﻿using Data.Interfaces;
+using Domain.Entities;
 using MediatR;
 
-namespace Application.Handlers.ProductDetail.Command
+namespace Service.Handlers.ProductDetails.Command
 {
-    public class CreateProductDetailCommand : IRequest<Boolean>
+    public class CreateProductDetailCommand : IRequest<bool>
     {
         public string idProduct { get; set; }
         public string idBrand { get; set; }
@@ -12,15 +13,15 @@ namespace Application.Handlers.ProductDetail.Command
         public string idImage { get; set; }
         public string idMaterial { get; set; }
         public string idSize { get; set; }
-        public Double Price { get; set; }
+        public double Price { get; set; }
         public long Quantity { get; set; }
     }
 
-    public class CreateProductDetailHandler : IRequestHandler<CreateProductDetailCommand, Boolean>
+    public class CreateProductDetailHandler : IRequestHandler<CreateProductDetailCommand, bool>
     {
-        private readonly IRepository<Domain.Entities.ProductDetail> _repository;
+        private readonly IRepository<ProductDetail> _repository;
 
-        public CreateProductDetailHandler(IRepository<Domain.Entities.ProductDetail> repository)
+        public CreateProductDetailHandler(IRepository<ProductDetail> repository)
         {
             _repository = repository;
         }
@@ -28,7 +29,7 @@ namespace Application.Handlers.ProductDetail.Command
         public async Task<Boolean> Handle(CreateProductDetailCommand request,
             CancellationToken cancellationToken)
         {
-            Domain.Entities.ProductDetail productDetail = new Domain.Entities.ProductDetail
+            ProductDetail productDetail = new ProductDetail
             {
                 IdProduct = request.idProduct,
                 IdBrand = request.idBrand,

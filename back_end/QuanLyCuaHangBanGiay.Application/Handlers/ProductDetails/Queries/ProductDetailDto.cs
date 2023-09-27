@@ -1,4 +1,4 @@
-﻿namespace Service.Handlers.ProductDetail.Queries
+﻿namespace Service.Handlers.ProductDetails.Queries
 {
     public class ProductDetailDto
     {

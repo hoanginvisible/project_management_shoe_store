@@ -18,6 +18,11 @@ builder.Services.RegisterDI();
 // Register handler MediatR
 builder.Services.RegisterMediatR();
 
+builder.Services.AddCors(p => p.AddPolicy("myCors", builder =>
+{
+    // builder.WithOrigins("http://localhost:3000");
+    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
 // Register fluentvalidation
 // builder.Services.RegisterFluentValidation();
 
@@ -31,6 +36,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("myCors");
 
 app.UseHttpsRedirection();
 app.UseAuthentication(); // Add authentication

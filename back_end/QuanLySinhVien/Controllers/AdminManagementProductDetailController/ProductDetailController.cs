@@ -1,11 +1,11 @@
-﻿using Application.Handlers.ProductDetail.Command;
-using Application.Handlers.ProductDetail.Queries;
-using Infrastructure.Login;
+﻿using Infrastructure.Login;
 using Microsoft.AspNetCore.Mvc;
-using Service.Common.Validator;
-using Service.Handlers.ProductDetail.Queries;
+using QuanLyCuaHangBanGiay.Commons;
+using Service.Common.Validators.ProductDetails;
+using Service.Handlers.ProductDetails.Command;
+using Service.Handlers.ProductDetails.Queries;
 
-namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetail
+namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetailController
 {
     // [Authorize]
     [Route("api/admin/product-management")]
@@ -40,11 +40,11 @@ namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetail
                 string builder = "";
                 foreach (var failure in results.Errors)
                 {
-                    builder += (failure.PropertyName + failure.ErrorMessage + "\n");
+                    // builder += (failure.PropertyName +  + "\n");
+                    return BadRequest(new ResponseObject(failure.ErrorMessage));
                 }
-                return BadRequest(builder);
-                // return BadRequest(new Reponse("dau buoi", false));
             }
+
             await Mediator.Send(productDetailCommand);
             return Ok();
         }
@@ -52,7 +52,13 @@ namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetail
         [HttpDelete("delete-product")]
         public async Task<IActionResult> Delete([FromQuery] string id)
         {
-            return Ok(await Mediator.Send(new DeleteProductDetailCommand { id = id }));
+            var result = await Mediator.Send(new DeleteProductDetailCommand { id = id });
+            if (result == null)
+            {
+                return NotFound(new ResponseObject("Không có bản ghi"));
+            }
+
+            return Ok();
         }
 
         // [HttpPost("login")]
