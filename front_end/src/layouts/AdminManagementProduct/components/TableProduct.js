@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Space, Table, Popconfirm, message, Button, Modal } from "antd";
+import { Space, Table, Popconfirm, message, Button, Modal, Form , Input, Select} from "antd";
 import { APIProductManagerment } from "../api/APIProductManagement";
 import {
     faPenToSquare,
@@ -10,7 +10,26 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const TableProduct = () => {
-    const [listProduct, setListProduct] = useState([]);
+    const [listProductDetail, setListProductDetail] = useState([]);
+    const [event, setEvent] = useState({
+        idProudct: '',
+        idBrand: '',
+        idCategory: '',
+        idColor: '',
+        idImage: '',
+        idMameterial: '',
+        idSize: '',
+        price: null,
+        quantity: null
+    })
+    const updateEvent = {...event}
+    // List
+    const [listProduct, setListProduct] = useState();
+    const [listBrand, setListBrand] = useState();
+    const [listCategory, setListCategory] = useState();
+    const [listColor, setListColor] = useState();
+    const [listMaterial, setListMaterial] = useState();
+    const [listSize, setListSize] = useState();
 
     const columns = [
         {
@@ -49,11 +68,6 @@ const TableProduct = () => {
             title: "Material",
             dataIndex: "nameMaterial",
             key: "nameMaterial",
-        },
-        {
-            title: "Brand",
-            dataIndex: "nameBrand",
-            key: "nameBrand",
         },
         {
             title: "Price",
@@ -138,8 +152,8 @@ const TableProduct = () => {
     const confirm = (id) => {
         APIProductManagerment.deleteProductDetail(id)
             .then((res) => {
-                const listProductNew = listProduct.filter((p) => p.id !== id);
-                setListProduct(listProductNew);
+                const listProductNew = listProductDetail.filter((p) => p.id !== id);
+                setListProductDetail(listProductNew);
                 message.success("Thành công");
             })
             .catch((err) => {
@@ -150,8 +164,55 @@ const TableProduct = () => {
     useEffect(() => {
         APIProductManagerment.getProductDetails()
             .then((response) => {
+                setListProductDetail(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+        APIProductManagerment.getProducts()
+            .then((response) => {
                 setListProduct(response.data);
-                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+        APIProductManagerment.getBrands()
+            .then((response) => {
+                setListBrand(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+        APIProductManagerment.getCategorys()
+            .then((response) => {
+                setListCategory(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+        APIProductManagerment.getColors()
+            .then((response) => {
+                setListColor(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+        APIProductManagerment.getMaterials()
+            .then((response) => {
+                setListMaterial(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+        APIProductManagerment.getSizes()
+            .then((response) => {
+                setListSize(response.data);
             })
             .catch((error) => {
                 console.log(error);
@@ -196,11 +257,24 @@ const TableProduct = () => {
                     </Button>,
                 ]}
             >
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
+                <Form>
+                    <Form.Item label="Prodcut" rules={[{ required: true }]}>
+                        <Select
+                            value={listProduct}
+                            onChange={(value) => setEventCategory(value)}
+                            disabled={isDisabled}
+                            options={listCategory.map((category) => ({
+                                value: category.id,
+                                label: category.name,
+                            }))}
+                        />
+                        {/*<span style={{ fontSize: 15, color: "red" }}>*/}
+                        {/*    {errorEventCategory}*/}
+                        {/*</span>*/}
+                    </Form.Item>
+                </Form>
             </Modal>
-            <Table columns={columns} dataSource={listProduct} scroll={{ x: "100vw" }} />
+            <Table columns={columns} dataSource={listProductDetail} scroll={{ x: "100vw" }} />
         </>
     );
 };

@@ -2,8 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using QuanLyCuaHangBanGiay.Commons;
 using Service.Common.Validators.ProductDetails;
+using Service.Handlers.Brands.Queries;
+using Service.Handlers.Categorys.Queries;
+using Service.Handlers.Colors.Queries;
+using Service.Handlers.Materials.Queries;
 using Service.Handlers.ProductDetails.Command;
 using Service.Handlers.ProductDetails.Queries;
+using Service.Handlers.Products.Queries;
 
 namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetailController
 {
@@ -18,16 +23,52 @@ namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetailControlle
             _tokenHandler = tokenHandler;
         }
 
-        [HttpGet("get-page-product")]
+        [HttpGet("get-page-product-detail")]
         public async Task<IEnumerable<ProductDetailDto>> GetProductDetails([FromQuery] int page = 1)
         {
             return await Mediator.Send(new GetProductDetailsQuery { PageNumber = page });
         }
 
-        [HttpGet("get-all-product")]
+        [HttpGet("get-all-product-detail")]
         public async Task<IEnumerable<ProductDetailDto>> GetAllProductDetails()
         {
             return await Mediator.Send(new GetAllProductDetailQuery());
+        }
+
+        [HttpGet("get-all-brand")]
+        public async Task<IEnumerable<BrandDto>> GetAllBrands()
+        {
+            return await Mediator.Send(new GetAllBrandQuery());
+        }
+
+        [HttpGet("get-all-product")]
+        public async Task<IEnumerable<ProductDto>> GetAllProdcuts()
+        {
+            return await Mediator.Send(new GetAllProductQuery());
+        }
+
+        [HttpGet("get-all-category")]
+        public async Task<IEnumerable<CategoryDto>> GetAllCategory()
+        {
+            return await Mediator.Send(new GetAllCategoryQuery());
+        }
+
+        [HttpGet("get-all-color")]
+        public async Task<IEnumerable<ColorDto>> GetAllColor()
+        {
+            return await Mediator.Send(new GetAllColorQuery());
+        }
+
+        [HttpGet("get-all-material")]
+        public async Task<IEnumerable<MaterialDto>> GetAllMaterial()
+        {
+            return await Mediator.Send(new GetAllMaterialQuery());
+        }
+
+        [HttpGet("get-all-size")]
+        public async Task<IEnumerable<SizeDto>> GetAllSize()
+        {
+            return await Mediator.Send(new GetAllSizeQuery());
         }
 
         [HttpPost("create-product")]
