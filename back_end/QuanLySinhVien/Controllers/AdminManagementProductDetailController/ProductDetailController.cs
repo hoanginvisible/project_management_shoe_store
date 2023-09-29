@@ -90,6 +90,13 @@ namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetailControlle
             return Ok();
         }
 
+        [HttpPut("update-product")]
+        public async Task<IActionResult> Update()
+        {
+            UpdateProductDetailCommandValidator
+            return Ok();
+        }
+
         [HttpDelete("delete-product")]
         public async Task<IActionResult> Delete([FromQuery] string id)
         {
@@ -101,6 +108,7 @@ namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetailControlle
 
             return Ok();
         }
+        
 
         [HttpPost("search-product-detail")]
         public async Task<IEnumerable<ProductDetailDto>> SearchProductDetail([FromBody] GetProductDetailByConditionQuery query)

@@ -67,7 +67,8 @@ namespace Service.Handlers.ProductDetails.Queries
             parameters.Add("@PriceMax", $"\"*{request.PriceMax}*\"");
             parameters.Add("@QuantityMin", $"\"*{request.QuantityMin}*\"");
             parameters.Add("@QuantityMax", $"\"*{request.QuantityMax}*\"");
-            return _dapperHelper.ExecuteSqlReturnList<ProductDetailDto>(query, parameters);
+            var result = _dapperHelper.ExecuteSqlReturnList<ProductDetailDto>(query, parameters);
+            return result;
         }
     }
 }

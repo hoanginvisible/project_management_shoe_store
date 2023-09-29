@@ -30,7 +30,8 @@ namespace Service.Handlers.ProductDetails.Queries
             LEFT JOIN Color ON Color.Id = pd.IdColor
             LEFT JOIN Images i ON i.Id = pd.IdImage
             LEFT JOIN Material m ON m.Id = pd.IdMaterial
-            LEFT JOIN Size s ON s.Id = pd.IdSize";
+            LEFT JOIN Size s ON s.Id = pd.IdSize
+            ORDER BY pd.LastModifiedDate ASC";
 
             return await _dapperHelper.ExecuteSqlReturnList<ProductDetailDto>(query);
         }

@@ -10,6 +10,7 @@ import {
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const TableProduct = () => {
+
     const [listProductDetail, setListProductDetail] = useState([]);
     const [idProduct, setIdProduct] = useState("");
     const [idBrand, setIdBrand] = useState("");
@@ -178,8 +179,15 @@ const TableProduct = () => {
         APIProductManagerment.createProductDetail(data).then(
             (response) => {
                 setListProductDetail([data, ...listProductDetail])
+                APIProductManagerment.getProductDetails()
+                    .then((response) => {
+                        setListProductDetail(response.data);
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
                 message.success("Thành công");
-                console.log(data)
+                handleClearFormInfoProduct();
                 setIsModalOpen(false);
             },
             (error) => {
@@ -187,6 +195,7 @@ const TableProduct = () => {
                 console.log(error)
             }
         )
+        console.log(listProductDetail)
         // OREventDetailApi.updateEvent(obj).then(
         //     (response) => {
         //         message.success("Cập nhật thành công");
@@ -392,8 +401,8 @@ const TableProduct = () => {
                 </Form>
             </Modal>
             <Table columns={columns} dataSource={listProductDetail} scroll={{x: "100vw"}} pagination={{
-                current: 1,
-                pageSize: 5,
+                // current: 1,
+                // pageSize: 5,
                 // total: 1
             }}/>
         </>
