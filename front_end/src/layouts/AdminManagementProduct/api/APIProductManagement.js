@@ -57,7 +57,7 @@ export class APIProductManagerment {
     static createProductDetail(data) {
         return request({
             method: "POST",
-            url: api + "create-product?id=",
+            url: api + "create-product",
             data: data,
         });
     }

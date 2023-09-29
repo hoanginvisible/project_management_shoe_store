@@ -102,6 +102,12 @@ namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetailControlle
             return Ok();
         }
 
+        [HttpPost("search-product-detail")]
+        public async Task<IEnumerable<ProductDetailDto>> SearchProductDetail([FromBody] GetProductDetailByConditionQuery query)
+        {
+            return await Mediator.Send(new GetProductDetailByConditionQuery());
+        }
+        
         // [HttpPost("login")]
         // [AllowAnonymous]
         // public async Task<IActionResult> Login([FromBody] AccountModel accountModel)

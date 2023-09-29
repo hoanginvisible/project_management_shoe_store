@@ -4,8 +4,9 @@ using MediatR;
 
 namespace Service.Handlers.ProductDetails.Command
 {
-    public class CreateProductDetailCommand : IRequest<bool>
+    public record UpdateProductDetailCommand : IRequest<bool>
     {
+        public string id { get; set; }
         public string idProduct { get; set; }
         public string idBrand { get; set; }
         public string idCategory { get; set; }
@@ -17,20 +18,20 @@ namespace Service.Handlers.ProductDetails.Command
         public long Quantity { get; set; }
     }
 
-    public class CreateProductDetailHandler : IRequestHandler<CreateProductDetailCommand, bool>
+    public class UpdateProductDetailCommandHandle : IRequestHandler<UpdateProductDetailCommand, bool>
     {
         private readonly IRepository<ProductDetail> _repository;
 
-        public CreateProductDetailHandler(IRepository<ProductDetail> repository)
+        public UpdateProductDetailCommandHandle(IRepository<ProductDetail> repository)
         {
             _repository = repository;
         }
 
-        public async Task<Boolean> Handle(CreateProductDetailCommand request,
-            CancellationToken cancellationToken)
+        public async Task<bool> Handle(UpdateProductDetailCommand request, CancellationToken cancellationToken)
         {
             ProductDetail productDetail = new ProductDetail
             {
+                Id = request.id,
                 IdProduct = request.idProduct,
                 IdBrand = request.idBrand,
                 IdCategory = request.idCategory,
@@ -43,7 +44,7 @@ namespace Service.Handlers.ProductDetails.Command
                 CreatedDate = new DateTime(),
                 LastModifiedDate = new DateTime()
             };
-            _repository.Insert(productDetail);
+            _repository.Update(productDetail);
             return true;
         }
     }

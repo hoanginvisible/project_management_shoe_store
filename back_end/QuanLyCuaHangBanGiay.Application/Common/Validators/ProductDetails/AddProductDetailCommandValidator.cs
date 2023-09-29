@@ -11,7 +11,7 @@ namespace Service.Common.Validators.ProductDetails
             RuleFor(x => x.idBrand).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
             RuleFor(x => x.idCategory).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
             RuleFor(x => x.idColor).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
-            RuleFor(x => x.idImage).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
+            // RuleFor(x => x.Image).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
             RuleFor(x => x.idMaterial).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
             RuleFor(x => x.idSize).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
             RuleFor(x => x.Price).NotNull().WithMessage("Vui lòng nhập dữ liệu đầy đủ").Must(x =>
