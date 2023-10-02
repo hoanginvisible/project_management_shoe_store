@@ -1,0 +1,11 @@
+.btn-search {
+    border: 0px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background: white;
+    margin-bottom: 10px;
+}
+
+.btn-search * {
+    margin: 20px;
+}

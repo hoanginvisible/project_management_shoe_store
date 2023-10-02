@@ -78,10 +78,8 @@ namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetailControlle
             var results = await validation.ValidateAsync(productDetailCommand);
             if (!results.IsValid)
             {
-                string builder = "";
                 foreach (var failure in results.Errors)
                 {
-                    // builder += (failure.PropertyName +  + "\n");
                     return BadRequest(new ResponseObject(failure.ErrorMessage));
                 }
             }
@@ -91,9 +89,19 @@ namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetailControlle
         }
 
         [HttpPut("update-product")]
-        public async Task<IActionResult> Update()
+        public async Task<IActionResult> Update([FromBody] UpdateProductDetailCommand updateProductDetailCommand)
         {
-            UpdateProductDetailCommandValidator
+            UpdateProductDetailCommandValidator validator = new();
+            var result = await validator.ValidateAsync(updateProductDetailCommand);
+            if (!result.IsValid)
+            {
+                foreach (var failure in result.Errors)
+                {
+                    return BadRequest(new ResponseObject(failure.ErrorMessage));
+                }
+            }
+
+            await Mediator.Send(updateProductDetailCommand);
             return Ok();
         }
 
@@ -108,14 +116,15 @@ namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetailControlle
 
             return Ok();
         }
-        
+
 
         [HttpPost("search-product-detail")]
-        public async Task<IEnumerable<ProductDetailDto>> SearchProductDetail([FromBody] GetProductDetailByConditionQuery query)
+        public async Task<IEnumerable<ProductDetailDto>> SearchProductDetail(
+            [FromBody] GetProductDetailByConditionQuery query)
         {
             return await Mediator.Send(new GetProductDetailByConditionQuery());
         }
-        
+
         // [HttpPost("login")]
         // [AllowAnonymous]
         // public async Task<IActionResult> Login([FromBody] AccountModel accountModel)

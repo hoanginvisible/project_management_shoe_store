@@ -1,16 +1,30 @@
-import React, {useEffect, useState} from "react";
-import {Space, Table, Popconfirm, message, Button, Modal, Form, Input, Select} from "antd";
-import {APIProductManagerment} from "../api/APIProductManagement";
+import React, { useEffect, useState } from "react";
+import { UploadOutlined } from "@ant-design/icons";
+import {
+    Space,
+    Table,
+    Popconfirm,
+    message,
+    Button,
+    Modal,
+    Form,
+    Input,
+    Select,
+} from "antd";
+import { APIProductManagerment } from "../api/APIProductManagement";
 import {
     faPenToSquare,
     faTrash,
     faPlus,
     faXmark,
+    faFileCsv
 } from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ExportExcel from "./ExportExcel"
+import "./ZoomImage.css"
+import "./TableProduct.css"
 
 const TableProduct = () => {
-
     const [listProductDetail, setListProductDetail] = useState([]);
     const [idProduct, setIdProduct] = useState("");
     const [idBrand, setIdBrand] = useState("");
@@ -29,22 +43,27 @@ const TableProduct = () => {
     const [listMaterial, setListMaterial] = useState([]);
     const [listSize, setListSize] = useState([]);
 
+    const { Search } = Input;
+
     const columns = [
         {
             title: "STT",
             dataIndex: "stt",
             key: "stt",
             render: (text, record, index) => <span>{index + 1}</span>,
+
         },
         {
             title: "Name",
             dataIndex: "nameProduct",
             key: "nameProduct",
+
         },
         {
             title: "Brand",
             dataIndex: "nameBrand",
             key: "nameBrand",
+            width: 10,
         },
         {
             title: "Category",
@@ -55,6 +74,7 @@ const TableProduct = () => {
             title: "Color",
             dataIndex: "nameColor",
             key: "nameColor",
+            width: 10,
         },
         {
             title: "Image",
@@ -62,9 +82,22 @@ const TableProduct = () => {
             key: "image",
             render: (image) => {
                 if (image != null) {
-                    return <img src={image} width={100} height={100}/>
+                    return (
+                        <div
+                            className="img-container"
+                            onMouseEnter={(e) => e.currentTarget.classList.add("hover")}
+                            onMouseLeave={(e) => e.currentTarget.classList.remove("hover")}
+                        >
+                            <img
+                                src={image}
+                                width={100}
+                                height={100}
+                                className="img-zoom"
+                            />
+                        </div>
+                    );
                 }
-                return "--"
+                return "--";
             },
         },
         {
@@ -81,27 +114,8 @@ const TableProduct = () => {
             title: "Quantity",
             dataIndex: "quantity",
             key: "quantity",
+            width: 5,
         },
-        // {
-        //     title: "Trạng thái",
-        //     key: "tags",
-        //     dataIndex: "tags",
-        //     render: (_, {tags}) => (
-        //         <>
-        //             {tags.map((tag) => {
-        //                 let color = tag.length > 5 ? "geekblue" : "green";
-        //                 if (tag === "loser") {
-        //                     color = "volcano";
-        //                 }
-        //                 return (
-        //                     <Tag color={color} key={tag}>
-        //                         {tag.toUpperCase()}
-        //                     </Tag>
-        //                 );
-        //             })}
-        //         </>
-        //     ),
-        // },
         {
             title: "Action",
             key: "action",
@@ -109,7 +123,7 @@ const TableProduct = () => {
                 <Space size="middle">
                     <FontAwesomeIcon
                         icon={faPenToSquare}
-                        style={{color: "#0866ff"}}
+                        style={{ color: "#0866ff" }}
                         title={"Sửa"}
                         onMouseOver={() => {
                             document.body.style.cursor = "pointer";
@@ -127,7 +141,7 @@ const TableProduct = () => {
                     >
                         <FontAwesomeIcon
                             icon={faTrash}
-                            style={{color: "#ff0000"}}
+                            style={{ color: "#ff0000" }}
                             title={"Xóa"}
                             onMouseOver={() => {
                                 document.body.style.cursor = "pointer";
@@ -150,16 +164,16 @@ const TableProduct = () => {
         setIsModalOpen(false);
     };
     const handleClearFormInfoProduct = () => {
-        setIdProduct("")
-        setIdBrand("")
-        setIdCategory("")
-        setIdColor("")
-        setIdSize("")
-        setIdMaterial("")
-        setImage("")
-        setPrice("")
-        setQuantity("")
-    }
+        setIdProduct("");
+        setIdBrand("");
+        setIdCategory("");
+        setIdColor("");
+        setIdSize("");
+        setIdMaterial("");
+        setImage("");
+        setPrice("");
+        setQuantity("");
+    };
     const handleCancel = () => {
         handleClearFormInfoProduct();
         setIsModalOpen(false);
@@ -174,11 +188,11 @@ const TableProduct = () => {
             idMaterial: idMaterial,
             idSize: idSize,
             price: price,
-            quantity: quantity
-        }
+            quantity: quantity,
+        };
         APIProductManagerment.createProductDetail(data).then(
             (response) => {
-                setListProductDetail([data, ...listProductDetail])
+                setListProductDetail([data, ...listProductDetail]);
                 APIProductManagerment.getProductDetails()
                     .then((response) => {
                         setListProductDetail(response.data);
@@ -191,11 +205,11 @@ const TableProduct = () => {
                 setIsModalOpen(false);
             },
             (error) => {
-                message.error("Thất bại")
-                console.log(error)
+                message.error("Thất bại");
+                console.log(error);
             }
-        )
-        console.log(listProductDetail)
+        );
+        console.log(listProductDetail);
         // OREventDetailApi.updateEvent(obj).then(
         //     (response) => {
         //         message.success("Cập nhật thành công");
@@ -276,26 +290,49 @@ const TableProduct = () => {
 
     return (
         <>
-            <Button type="primary" className="btn-form-event" onClick={showModal}>
+            <div className={"btn-search"}>
+fsdfsd
+            </div>
+            <Button type="primary" className="btn-form-event" onClick={showModal} style={{marginRight: "7px"}}>
                 <FontAwesomeIcon
                     icon={faPlus}
-                    style={{color: "#ffffff", marginRight: "7px"}}
+                    style={{ color: "#ffffff", marginRight: "7px" }}
                 />
                 Thêm sản phẩm
             </Button>
+
+            <ExportExcel data={listProductDetail} />
+            <Button type="primary" className="btn-form-event"  style={{backgroundColor: "#217346", marginRight: "220px"}}>
+                <FontAwesomeIcon
+                    icon={faFileCsv}
+                    style={{ color: "#ffffff", marginRight: "7px" }}
+                />
+                Import Excel
+            </Button>
+            {/*<Search placeholder="input search text" onSearch={onSearch} enterButton />*/}
+            <Search
+                placeholder="Full text search"
+                allowClear
+                enterButton="Search"
+                style={{
+                    width: 304,
+                }}
+                // onSearch={onSearch}
+            />
             <Modal
                 title="Thông tin sản phẩm"
                 open={isModalOpen}
+                closable={false}
                 footer={[
                     <Button
                         type="primary"
                         className="btn-form-event"
                         onClick={handleCreateProductDetail}
-                        style={{backgroundColor: "green"}}
+                        style={{ backgroundColor: "green" }}
                     >
                         <FontAwesomeIcon
                             icon={faPlus}
-                            style={{color: "#ffffff", marginRight: "7px"}}
+                            style={{ color: "#ffffff", marginRight: "7px" }}
                         />
                         Thêm
                     </Button>,
@@ -303,18 +340,18 @@ const TableProduct = () => {
                         type="primary"
                         className="btn-form-event"
                         onClick={handleCancel}
-                        style={{backgroundColor: "red"}}
+                        style={{ backgroundColor: "red" }}
                     >
                         <FontAwesomeIcon
                             icon={faXmark}
-                            style={{color: "#ffffff", marginRight: "7px"}}
+                            style={{ color: "#ffffff", marginRight: "7px" }}
                         />
                         Hủy
                     </Button>,
                 ]}
             >
                 <Form>
-                    <Form.Item label="Prodcut" rules={[{required: true}]}>
+                    <Form.Item label="Prodcut" rules={[{ required: true }]}>
                         <Select
                             value={idProduct}
                             onChange={(value) => setIdProduct(value)}
@@ -324,7 +361,7 @@ const TableProduct = () => {
                             }))}
                         />
                     </Form.Item>
-                    <Form.Item label="Brand" rules={[{required: true}]}>
+                    <Form.Item label="Brand" rules={[{ required: true }]}>
                         <Select
                             value={idBrand}
                             onChange={(value) => setIdBrand(value)}
@@ -334,7 +371,7 @@ const TableProduct = () => {
                             }))}
                         />
                     </Form.Item>
-                    <Form.Item label="Category" rules={[{required: true}]}>
+                    <Form.Item label="Category" rules={[{ required: true }]}>
                         <Select
                             value={idCategory}
                             onChange={(value) => setIdCategory(value)}
@@ -344,7 +381,7 @@ const TableProduct = () => {
                             }))}
                         />
                     </Form.Item>
-                    <Form.Item label="Color" rules={[{required: true}]}>
+                    <Form.Item label="Color" rules={[{ required: true }]}>
                         <Select
                             value={idColor}
                             onChange={(value) => setIdColor(value)}
@@ -354,7 +391,7 @@ const TableProduct = () => {
                             }))}
                         />
                     </Form.Item>
-                    <Form.Item label="Material" rules={[{required: true}]}>
+                    <Form.Item label="Material" rules={[{ required: true }]}>
                         <Select
                             value={idMaterial}
                             onChange={(value) => setIdMaterial(value)}
@@ -364,7 +401,7 @@ const TableProduct = () => {
                             }))}
                         />
                     </Form.Item>
-                    <Form.Item label="Size" rules={[{required: true}]}>
+                    <Form.Item label="Size" rules={[{ required: true }]}>
                         <Select
                             value={idSize}
                             onChange={(value) => setIdSize(value)}
@@ -374,9 +411,7 @@ const TableProduct = () => {
                             }))}
                         />
                     </Form.Item>
-                    <Form.Item
-                        label="Price"
-                    >
+                    <Form.Item label="Price">
                         <Input
                             placeholder="Nhập vào giá"
                             value={price}
@@ -386,9 +421,7 @@ const TableProduct = () => {
                         {/*        {errorEventName}*/}
                         {/*    </span>*/}
                     </Form.Item>
-                    <Form.Item
-                        label="Quantity"
-                    >
+                    <Form.Item label="Quantity">
                         <Input
                             placeholder="Nhập vào số lượng"
                             value={quantity}
@@ -398,13 +431,29 @@ const TableProduct = () => {
                         {/*        {errorEventName}*/}
                         {/*    </span>*/}
                     </Form.Item>
+                    <Form.Item label={"Image"}>
+                        <Button
+                            // disabled={isDisabledImg}
+                            icon={<UploadOutlined />}
+                            // onClick={() => showModalImageUpload(background, 0)}
+                        >
+                            Tải lên
+                        </Button>
+                    </Form.Item>
                 </Form>
             </Modal>
-            <Table columns={columns} dataSource={listProductDetail} scroll={{x: "100vw"}} pagination={{
-                // current: 1,
-                // pageSize: 5,
-                // total: 1
-            }}/>
+            <Table
+                style={{marginTop: "7px"}}
+                columns={columns}
+                dataSource={listProductDetail}
+                pagination={
+                    {
+                        // current: 1,
+                        pageSize: 3,
+                        // total: 1
+                    }
+                }
+            />
         </>
     );
 };

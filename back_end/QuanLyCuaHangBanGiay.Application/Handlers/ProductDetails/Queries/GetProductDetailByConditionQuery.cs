@@ -6,16 +6,16 @@ namespace Service.Handlers.ProductDetails.Queries
 {
     public record GetProductDetailByConditionQuery : IRequest<IEnumerable<ProductDetailDto>>
     {
-        public string Product { get; set; }
-        public string Brand { get; set; }
-        public string Category { get; set; }
-        public string Color { get; set; }
-        public string Material { get; set; }
-        public string Size { get; set; }
-        public double PriceMin { get; set; }
-        public double PriceMax { get; set; }
-        public long QuantityMin { get; set; }
-        public long QuantityMax { get; set; }
+        public string? Product { get; set; }
+        public string? Brand { get; set; }
+        public string? Category { get; set; }
+        public string? Color { get; set; }
+        public string? Material { get; set; }
+        public string? Size { get; set; }
+        public double? PriceMin { get; set; }
+        public double? PriceMax { get; set; }
+        public long? QuantityMin { get; set; }
+        public long? QuantityMax { get; set; }
     }
 
     public class
@@ -44,29 +44,29 @@ namespace Service.Handlers.ProductDetails.Queries
                     LEFT JOIN Images i ON i.Id = pd.IdImage
                     LEFT JOIN Material m ON m.Id = pd.IdMaterial
                     LEFT JOIN Size s ON s.Id = pd.IdSize
-                    WHERE CONTAINS(p.Name, @Product)
-                    AND CONTAINS(b.Name, @Brand)
-                    AND CONTAINS(c.Name, @Category)
-                    AND CONTAINS(Color.Name, @Color)
-                    AND CONTAINS(m.Name, @Material)
-                    AND CONTAINS(s.Name, @Size)
-                    AND (@PriceMin IS NULL OR @PriceMin LIKE '' OR @PriceMin <= pd.Price)
-                    AND (@PriceMax IS NULL OR @PriceMin LIKE '' OR pd.Price <= @PriceMax)
-                    AND (@QuantityMin IS NULL OR @QuantityMin LIKE '' OR @QuantityMin <= pd.Quantity)
-                    AND (@QuantityMax IS NULL OR @QuantityMax LIKE '' OR pd.Quantity <= @QuantityMax)
+                    WHERE (@Product IS NULL OR p.Name LIKE @Product)
+                    AND (@Brand IS NULL OR b.Name LIKE @Brand)
+                    AND (@Category IS NULL OR c.Name LIKE @Category)
+                    AND (@Color IS NULL OR Color.Name LIKE @Color)
+                    AND (@Material IS NULL OR m.Name LIKE @Material)
+                    AND (@Size IS NULL OR s.Name LIKE @Size)
+                    AND (@PriceMin IS NULL OR @PriceMin <= pd.Price)
+                    AND (@PriceMax IS NULL OR pd.Price <= @PriceMax)
+                    AND (@QuantityMin IS NULL  OR @QuantityMin <= pd.Quantity)
+                    AND (@QuantityMax IS NULL  OR pd.Quantity <= @QuantityMax)
                 ";
             var parameters = new DynamicParameters();
-            parameters.Add("@Product", $"\"*{request.Product}*\"");
-            parameters.Add("@Brand", $"\"*{request.Brand}*\"");
-            parameters.Add("@Category", $"\"*{request.Category}*\"");
-            parameters.Add("@Color", $"\"*{request.Color}*\"");
-            parameters.Add("@Material", $"\"*{request.Material}*\"");
-            parameters.Add("@PageNumber", $"\"*{request.Brand}*\"");
-            parameters.Add("@Size", $"\"*{request.Size}*\"");
-            parameters.Add("@PriceMin", $"\"*{request.PriceMin}*\"");
-            parameters.Add("@PriceMax", $"\"*{request.PriceMax}*\"");
-            parameters.Add("@QuantityMin", $"\"*{request.QuantityMin}*\"");
-            parameters.Add("@QuantityMax", $"\"*{request.QuantityMax}*\"");
+            parameters.Add("@Product", $"%{request.Product}%");
+            parameters.Add("@Brand", $"%{request.Brand}%");
+            parameters.Add("@Category", $"%{request.Category}%");
+            parameters.Add("@Color", $"%{request.Color}%");
+            parameters.Add("@Material", $"%{request.Material}%");
+            parameters.Add("@Size", $"%{request.Size}%");
+            parameters.Add("@PriceMin", request.PriceMin);
+            parameters.Add("@PriceMax", request.PriceMax);
+            parameters.Add("@QuantityMin", request.QuantityMin);
+            parameters.Add("@QuantityMax", request.QuantityMax);
+            Console.WriteLine(query);
             var result = _dapperHelper.ExecuteSqlReturnList<ProductDetailDto>(query, parameters);
             return result;
         }

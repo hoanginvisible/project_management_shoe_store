@@ -1,0 +1,22 @@
+/* CSS để nổi lên và có độ trễ */
+.img-container {
+    position: relative;
+    z-index: 1; /* Đặt z-index cao hơn các thành phần khác */
+}
+
+.img-zoom {
+    transform: scale(1); /* Không phóng to ban đầu */
+    transition: transform 1s ease; /* Hiệu ứng phóng to mặc định */
+}
+
+/* CSS cho ảnh khi hover */
+.img-container.hover .img-zoom {
+    transform: scale(3); /* Phóng to lên 150% khi hover */
+    z-index: 2; /* Đặt z-index cao hơn để nổi lên trên */
+}
+.img-zoom:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Đặt độ đổ bóng ở đây */
+}
+.img-zoom {
+    border-radius: 25px; /* Đặt độ cong viền ảo ở đây */
+}
