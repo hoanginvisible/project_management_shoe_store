@@ -1,9 +1,10 @@
-﻿namespace Service.Handlers.Materials.Queries
+﻿using Service.Handlers.Common;
+
+namespace Service.Handlers.Materials.Queries
 {
-    public class MaterialDto
+    public class MaterialDto : BaseDto
     {
-        public string Id { get; set; }
-        public string Code { get; set; }
-        public string Name { get; set; }
+        public string? Code { get; set; }
+        public string? Name { get; set; }
     }
 }

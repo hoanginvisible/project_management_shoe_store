@@ -41,9 +41,9 @@ namespace Infrastructure.Configurations
                             var tokenHandler = context.HttpContext.RequestServices.GetRequiredService<ITokenHandler>();
                             return tokenHandler.ValidationToken(context);
                         },
-                        OnAuthenticationFailed = context => { return Task.CompletedTask; },
-                        OnMessageReceived = context => { return Task.CompletedTask; },
-                        OnChallenge = context => { return Task.CompletedTask; }
+                        OnAuthenticationFailed = _ => Task.CompletedTask,
+                        OnMessageReceived = _ => Task.CompletedTask,
+                        OnChallenge = _ => Task.CompletedTask
                     };
                 });
         }

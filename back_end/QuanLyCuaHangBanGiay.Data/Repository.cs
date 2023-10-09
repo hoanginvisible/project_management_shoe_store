@@ -1,13 +1,14 @@
 ﻿using System.Linq.Expressions;
+using System.Transactions;
 using Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Data
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public sealed class Repository<T> : IRepository<T> where T : class
     {
-        private ApplicationDbContext _applicationDbContext;
+        private readonly ApplicationDbContext _applicationDbContext;
 
         public Repository(ApplicationDbContext applicationDbContext)
         {
@@ -24,59 +25,100 @@ namespace Data
             return await _applicationDbContext.Set<T>().Where(expression).ToListAsync();
         }
 
-        public async Task<T> GetById(object id)
+        public async Task<T?> GetById(object id)
         {
             var result = await _applicationDbContext.Set<T>().FindAsync(id);
-            if (result == null)
-            {
-                return null;
-            }
-
             return result;
         }
 
         public async Task Insert(IEnumerable<T> entity)
         {
-            // _ApplicationDbContext.Set<T>() dung de tra ve cac doi tuong duoc insert
-            // AddAsync(entity) tao ra cac cau insert vao co so du lieu
-            await _applicationDbContext.Set<T>().AddRangeAsync(entity);
-            _applicationDbContext.SaveChanges();
+            using var transactionScope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
+            try
+            {
+                await _applicationDbContext.Set<T>().AddRangeAsync(entity);
+                await _applicationDbContext.SaveChangesAsync();
+                transactionScope.Complete();
+            }
+            catch (Exception)
+            {
+                transactionScope.Dispose();
+                throw;
+            }
         }
 
         public async Task Insert(T entity)
         {
-            // _ApplicationDbContext.Set<T>() dung de tra ve cac doi tuong duoc insert
-            // AddAsync(entity) tao ra cac cau insert vao co so du lieu
-            await _applicationDbContext.Set<T>().AddAsync(entity);
-            _applicationDbContext.SaveChanges();
+            using var transactionScope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
+            try
+            {
+                await _applicationDbContext.Set<T>().AddAsync(entity);
+                await _applicationDbContext.SaveChangesAsync();
+                transactionScope.Complete();
+            }
+            catch (Exception)
+            {
+                transactionScope.Dispose();
+                throw;
+            }
         }
 
         public void Update(T entity)
         {
-            EntityEntry
-                entityEntry = _applicationDbContext.Entry<T>(entity); // lay ra entity tuong ung voi entity truyen vao
-            entityEntry.State = EntityState.Modified; // danh dau entity nay da bi thay doi
-            _applicationDbContext.SaveChanges();
+            using var transactionScope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
+            try
+            {
+                EntityEntry
+                    entityEntry = _applicationDbContext.Entry(entity);
+                entityEntry.State = EntityState.Modified;
+                _applicationDbContext.SaveChangesAsync();
+                transactionScope.Complete();
+            }
+            catch (Exception)
+            {
+                transactionScope.Dispose();
+                throw;
+            }
         }
 
         public void Delete(T entity)
         {
-            EntityEntry entityEntry = _applicationDbContext.Entry<T>(entity);
-            entityEntry.State = EntityState.Deleted;
-            _applicationDbContext.SaveChanges();
+            using var transactionScope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
+            try
+            {
+                EntityEntry entityEntry = _applicationDbContext.Entry(entity);
+                entityEntry.State = EntityState.Deleted;
+                _applicationDbContext.SaveChangesAsync();
+                transactionScope.Complete();
+            }
+            catch (Exception)
+            {
+                transactionScope.Dispose();
+                throw;
+            }
         }
 
         public void Delete(Expression<Func<T, bool>> expression)
         {
-            var entitis = _applicationDbContext.Set<T>().Where(expression).ToList();
-            if (entitis.Count > 0)
+            using var transactionScope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
+            try
             {
-                _applicationDbContext.Set<T>().RemoveRange(entitis);
-            }
+                var entities = _applicationDbContext.Set<T>().Where(expression).ToList();
+                if (entities.Count > 0)
+                {
+                    _applicationDbContext.Set<T>().RemoveRange(entities);
+                }
 
-            _applicationDbContext.SaveChanges();
+                _applicationDbContext.SaveChanges();
+                transactionScope.Complete();
+            }
+            catch (Exception)
+            {
+                transactionScope.Dispose();
+                throw;
+            }
         }
 
-        public virtual IQueryable<T> Table => _applicationDbContext.Set<T>();
+        public IQueryable<T> Table => _applicationDbContext.Set<T>();
     }
 }

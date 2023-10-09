@@ -291,7 +291,7 @@ const TableProduct = () => {
     return (
         <>
             <div className={"btn-search"}>
-fsdfsd
+               
             </div>
             <Button type="primary" className="btn-form-event" onClick={showModal} style={{marginRight: "7px"}}>
                 <FontAwesomeIcon

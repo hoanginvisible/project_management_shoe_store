@@ -2,12 +2,12 @@
 using Data.Interfaces;
 using MediatR;
 
-namespace Application.Handlers.Employer.Queries
+namespace Service.Handlers.Employers.Queries
 {
     public record GetEmployerQuery : IRequest<EmployerDto>
     {
-        public string Email { get; set; }
-        public string Password { get; set; }
+        public string? Email { get; set; }
+        public string? Password { get; set; }
     }
 
     public class GetEmployerQueryHandle : IRequestHandler<GetEmployerQuery, EmployerDto>

@@ -5,7 +5,7 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 import TableProduct from "./components/TableProduct";
 
-function Dashboard() {
+function IndexManagementProduct() {
     return (
         <DashboardLayout>
             <DashboardNavbar/>
@@ -23,4 +23,4 @@ function Dashboard() {
     );
 }
 
-export default Dashboard;
+export default IndexManagementProduct;

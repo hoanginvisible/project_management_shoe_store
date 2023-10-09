@@ -4,9 +4,14 @@ using Service.Common.Exceptions;
 
 namespace Service.Common.Behaviors
 {
-    public class ValidatorBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+    public class ValidatorBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
     {
-        private readonly IEnumerable<IValidator<IRequest>> _validators;
+        private readonly IEnumerable<IValidator<IRequest?>> _validators;
+
+        public ValidatorBehavior(IEnumerable<IValidator<IRequest?>> validators)
+        {
+            _validators = validators;
+        }
 
         public Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next,
             CancellationToken cancellationToken)
@@ -19,7 +24,7 @@ namespace Service.Common.Behaviors
 
             if (validationFailures.Any())
             {
-                var error = string.Join("\r\n", validationFailures);
+                // var error = string.Join("\r\n", validationFailures);
                 throw new DomainException(
                     $"Command validation Error for type {typeof(TRequest).Name}",
                     new ValidationException("Validation exception", validationFailures)

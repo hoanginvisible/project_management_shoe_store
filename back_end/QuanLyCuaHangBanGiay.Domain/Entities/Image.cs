@@ -6,9 +6,9 @@ namespace Domain.Entities
 {
     public class Image : BaseAuditableEntity
     {
-        [MaxLength(EntityProperties.LENGTH_CODE)]
-        public string name { get; set; }
+        [MaxLength(EntityProperties.LengthCode)]
+        public string? Name { get; set; }
 
-        public string Path { get; set; }
+        public string? Path { get; set; }
     }
 }

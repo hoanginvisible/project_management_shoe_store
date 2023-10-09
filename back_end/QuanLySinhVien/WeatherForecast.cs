@@ -1,4 +1,4 @@
-namespace QuanLySinhVien
+namespace QuanLyCuaHangBanGiay
 {
     public class WeatherForecast
     {

@@ -1,50 +1,17 @@
-﻿using Data.Interfaces;
-using Domain.Entities;
-using MediatR;
+﻿using MediatR;
 
 namespace Service.Handlers.ProductDetails.Command
 {
     public class CreateProductDetailCommand : IRequest<bool>
     {
-        public string idProduct { get; set; }
-        public string idBrand { get; set; }
-        public string idCategory { get; set; }
-        public string idColor { get; set; }
-        public string Image { get; set; }
-        public string idMaterial { get; set; }
-        public string idSize { get; set; }
+        public string? IdProduct { get; set; }
+        public string? IdBrand { get; set; }
+        public string? IdCategory { get; set; }
+        public string? IdColor { get; set; }
+        public string? Image { get; set; }
+        public string? IdMaterial { get; set; }
+        public string? IdSize { get; set; }
         public double Price { get; set; }
         public long Quantity { get; set; }
-    }
-
-    public class CreateProductDetailHandler : IRequestHandler<CreateProductDetailCommand, bool>
-    {
-        private readonly IRepository<ProductDetail> _repository;
-
-        public CreateProductDetailHandler(IRepository<ProductDetail> repository)
-        {
-            _repository = repository;
-        }
-
-        public async Task<Boolean> Handle(CreateProductDetailCommand request,
-            CancellationToken cancellationToken)
-        {
-            ProductDetail productDetail = new ProductDetail
-            {
-                IdProduct = request.idProduct,
-                IdBrand = request.idBrand,
-                IdCategory = request.idCategory,
-                IdColor = request.idColor,
-                IdImage = request.Image,
-                IdMaterial = request.idMaterial,
-                IdSize = request.idSize,
-                Price = request.Price,
-                Quantity = request.Quantity,
-                CreatedDate = new DateTime(),
-                LastModifiedDate = new DateTime()
-            };
-            _repository.Insert(productDetail);
-            return true;
-        }
     }
 }

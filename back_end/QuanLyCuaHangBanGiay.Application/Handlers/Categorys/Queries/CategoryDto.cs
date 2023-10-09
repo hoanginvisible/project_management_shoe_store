@@ -1,9 +1,11 @@
-﻿namespace Service.Handlers.Categorys.Queries
+﻿using Service.Handlers.Common;
+
+namespace Service.Handlers.Categorys.Queries
 {
-    public class CategoryDto
+    public class CategoryDto : BaseDto
+
     {
-        public string Id { get; set; }
-        public string Code { get; set; }
-        public string Name { get; set; }
+    public string? Code { get; set; }
+    public string? Name { get; set; }
     }
 }

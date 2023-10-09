@@ -8,49 +8,90 @@ namespace Data
 {
     public class DapperHelper : IDapperHelper
     {
-        private readonly string ConnectString = string.Empty;
+        private readonly string _connectString;
 
         public DapperHelper(IConfiguration configuration)
         {
-            ConnectString = configuration.GetConnectionString("ApplicationDbContext");
+            _connectString = configuration.GetConnectionString("ApplicationDbContext");
         }
 
         public async Task ExecuteNoReturn(string query, DynamicParameters? parameters = null,
             IDbTransaction? dbTransaction = null)
         {
-            using (var dbConnection = new SqlConnection(ConnectString))
+            await using var dbConnection = new SqlConnection(_connectString);
+            await dbConnection.OpenAsync();
+            await using var transaction = dbConnection.BeginTransaction();
+            try
             {
-                await dbConnection.ExecuteAsync(query, parameters, dbTransaction, commandType: CommandType.Text);
+                await dbConnection.ExecuteAsync(query, parameters, dbTransaction,
+                    commandType: CommandType.Text);
+                await transaction.CommitAsync();
+            }
+            catch (Exception)
+            {
+                await transaction.RollbackAsync();
+                throw;
             }
         }
+
 
         public async Task<T> ExecuteReturnScalar<T>(string query, DynamicParameters? parameters,
             IDbTransaction? dbTransaction = null)
         {
-            using (var dbConnection = new SqlConnection(ConnectString))
+            await using var dbConnection = new SqlConnection(_connectString);
+            await dbConnection.OpenAsync();
+            await using var transaction = dbConnection.BeginTransaction();
+            try
             {
-                return await dbConnection.QueryFirstOrDefaultAsync<T>(query, parameters, dbTransaction,
+                var result = await dbConnection.QueryFirstOrDefaultAsync<T>(query, parameters, dbTransaction,
                     commandType: CommandType.Text);
+                await transaction.CommitAsync();
+                return result;
+            }
+            catch (Exception)
+            {
+                await transaction.RollbackAsync();
+                throw;
             }
         }
 
         public async Task<IEnumerable<T>> ExecuteSqlReturnList<T>(string query, DynamicParameters? parameters = null,
             IDbTransaction? dbTransaction = null)
         {
-            using (var dbConnection = new SqlConnection(ConnectString))
+            await using var dbConnection = new SqlConnection(_connectString);
+            await dbConnection.OpenAsync();
+            await using var transaction = dbConnection.BeginTransaction();
+            try
             {
-                return await dbConnection.QueryAsync<T>(query, parameters, dbTransaction,
+                var result = await dbConnection.QueryAsync<T>(query, parameters, dbTransaction,
                     commandType: CommandType.Text);
+                await transaction.CommitAsync();
+                return result;
+            }
+            catch (Exception)
+            {
+                await transaction.RollbackAsync();
+                throw;
             }
         }
 
         public async Task<IEnumerable<T>> ExecuteStoreProcedureReturnList<T>(string query,
             DynamicParameters? parameters = null, IDbTransaction? dbTransaction = null)
         {
-            using (var dbConnection = new SqlConnection(ConnectString))
+            await using var dbConnection = new SqlConnection(_connectString);
+            await dbConnection.OpenAsync();
+            await using var transaction = dbConnection.BeginTransaction();
+            try
             {
-                return await dbConnection.QueryAsync<T>(query, parameters, dbTransaction,
+                var result = await dbConnection.QueryAsync<T>(query, parameters, dbTransaction,
                     commandType: CommandType.StoredProcedure);
+                await transaction.CommitAsync();
+                return result;
+            }
+            catch (Exception)
+            {
+                await transaction.RollbackAsync();
+                throw;
             }
         }
     }

@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Service.Common.Behaviors;
 using Service.Common.Validators.ProductDetails;
 using Service.Handlers.ProductDetails.Command;
-using Service.Handlers.ProductDetails.Queries;
+using Service.Handlers.ProductDetails.Queries.Handler;
 
 // using Service.Common.Behaviors;
 
@@ -27,7 +27,7 @@ namespace Infrastructure.Configurations
             });
         }
 
-        public static void RegisterDI(this IServiceCollection service)
+        public static void RegisterDi(this IServiceCollection service)
         {
             service.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             service.AddScoped<IDapperHelper, DapperHelper>();
@@ -39,8 +39,9 @@ namespace Infrastructure.Configurations
 
         public static void RegisterMediatR(this IServiceCollection service)
         {
-            service.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(GetProductDetailsQueryHandler).Assembly));
-            service.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CreateProductDetailCommand).Assembly));
+            service.AddMediatR(
+                cfg => cfg.RegisterServicesFromAssembly(typeof(GetAllProductDetailQueryHandler).Assembly));
+            // service.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CreateProductDetailCommand).Assembly));
         }
 
         public static void RegisterFluentValidation(this IServiceCollection service)

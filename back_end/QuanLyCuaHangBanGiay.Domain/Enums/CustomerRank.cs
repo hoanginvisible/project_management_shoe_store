@@ -5,7 +5,7 @@
         Dong,
         Bac,
         Vang,
-        Kim_Cuong,
-        Tinh_Anh
+        KimCuong,
+        TinhAnh
     }
 }

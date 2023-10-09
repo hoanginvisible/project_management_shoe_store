@@ -1,0 +1,61 @@
+.div-search {
+    background-color: #0964cf;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end; /* Đặt nội dung bên phải */
+}
+
+.div-content {
+    flex: 1; /* Chiếm phần còn lại của chiều rộng */
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+
+}
+
+.div-thanh-toan {
+    width: 35%; /* Chiếm 30% độ rộng */
+    background-color: white;
+    padding: 10px;
+    margin: 10px 0px 0px 10px;
+    border-radius: 10px;
+    height: 70vh;
+}
+
+.btn-thanh-toan {
+    background-color: #43a047;
+    width: 80%;
+    height: 70px;
+    font-size: 25px;
+    margin-top: 170px;
+}
+.bills {
+    display: flex;
+    margin-left: 10px;
+}
+.icon-add-hoa-don {
+    color: white;
+    margin-left: 7px;
+    transition: all 0.2s ease-in-out;
+}
+.icon-add-hoa-don:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+.bills button {
+    margin-right: 7px;
+}
+.icon-next {
+    transition: all 0.2s ease-in-out;
+}
+.icon-next:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}

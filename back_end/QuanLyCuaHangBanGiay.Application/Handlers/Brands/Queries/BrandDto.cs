@@ -1,9 +1,10 @@
-﻿namespace Service.Handlers.Brands.Queries
+﻿using Service.Handlers.Common;
+
+namespace Service.Handlers.Brands.Queries
 {
-    public class BrandDto
+    public class BrandDto : BaseDto
     {
-        public string Id { get; set; }
-        public string Code { get; set; }
-        public string Name { get; set; }
+        public string? Code { get; set; }
+        public string? Name { get; set; }
     }
 }

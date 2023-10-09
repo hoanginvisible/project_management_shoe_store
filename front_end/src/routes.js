@@ -35,16 +35,9 @@ Coded by www.creative-tim.com
   10. The `component` key is used to store the component of its route.
 */
 
-// Material Dashboard 2 React layouts
-// import Dashboard from "layouts/AdminManagementProduct";
-import Dashboard from "./layouts/AdminManagementProduct/index";
-import Tables from "layouts/tables";
-import Billing from "layouts/billing";
-import RTL from "layouts/rtl";
-import Notifications from "layouts/notifications";
-import Profile from "layouts/profile";
-import SignIn from "layouts/authentication/sign-in";
-import SignUp from "layouts/authentication/sign-up";
+
+import BanHang from "./layouts/AdminBanHang/index";
+import IndexManagementProduct from "./layouts/AdminManagementProduct/index";
 import {
   faCartShopping,
   faUsers,
@@ -52,7 +45,6 @@ import {
   faTags
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 // @mui icons
 import Icon from "@mui/material/Icon";
 
@@ -63,7 +55,7 @@ const routes = [
     key: "ban-hang",
     icon: <FontAwesomeIcon icon={faCartShopping} style={{color: "#ffffff",}} />,
     route: "/ban-hang",
-    component: <Dashboard />,
+    component: <BanHang />,
   },
   {
     type: "collapse",
@@ -71,7 +63,7 @@ const routes = [
     key: "san-pham",
     icon: <Icon fontSize="small">dashboard</Icon>,
     route: "/san-pham",
-    component: <Dashboard />,
+    component: <IndexManagementProduct />,
   },
   {
     type: "collapse",
@@ -79,7 +71,7 @@ const routes = [
     key: "nhan-vien",
     icon: <FontAwesomeIcon icon={faUsers} style={{color: "#ffffff",}} />,
     route: "/nhan-vien",
-    component: <Dashboard />,
+    component: <BanHang />,
   },
   {
     type: "collapse",
@@ -87,7 +79,7 @@ const routes = [
     key: "hoa-don",
     icon: <FontAwesomeIcon icon={faMoneyBill} style={{color: "#ffffff",}} />,
     route: "/hoa-don",
-    component: <Dashboard />,
+    component: <BanHang />,
   },
   {
     type: "collapse",
@@ -95,7 +87,7 @@ const routes = [
     key: "khuyen-mai",
     icon: <FontAwesomeIcon icon={faTags} style={{color: "#ffffff",}} />,
     route: "/khuyen-mai",
-    component: <Dashboard />,
+    component: <BanHang />,
   },
   {
     type: "collapse",
@@ -103,7 +95,7 @@ const routes = [
     key: "thong-ke",
     icon: <FontAwesomeIcon icon={faCartShopping} style={{color: "#ffffff",}} />,
     route: "/thong-ke",
-    component: <Dashboard />,
+    component: <BanHang />,
   },
   // {
   //   type: "collapse",

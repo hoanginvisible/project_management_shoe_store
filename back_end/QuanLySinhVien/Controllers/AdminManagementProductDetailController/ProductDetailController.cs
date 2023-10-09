@@ -1,5 +1,4 @@
-﻿using Infrastructure.Login;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using QuanLyCuaHangBanGiay.Commons;
 using Service.Common.Validators.ProductDetails;
 using Service.Handlers.Brands.Queries;
@@ -9,6 +8,7 @@ using Service.Handlers.Materials.Queries;
 using Service.Handlers.ProductDetails.Command;
 using Service.Handlers.ProductDetails.Queries;
 using Service.Handlers.Products.Queries;
+using Service.Handlers.Sizes.Queries;
 
 namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetailController
 {
@@ -16,17 +16,17 @@ namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetailControlle
     [Route("api/admin/product-management")]
     public class ProductDetailController : ApiControllerBase
     {
-        private readonly ITokenHandler _tokenHandler;
-
-        public ProductDetailController(ITokenHandler tokenHandler)
-        {
-            _tokenHandler = tokenHandler;
-        }
+        // private readonly ITokenHandler _tokenHandler;
+        //
+        // public ProductDetailController(ITokenHandler tokenHandler)
+        // {
+        //     _tokenHandler = tokenHandler;
+        // }
 
         [HttpGet("get-page-product-detail")]
         public async Task<IEnumerable<ProductDetailDto>> GetProductDetails([FromQuery] int page = 1)
         {
-            return await Mediator.Send(new GetProductDetailsQuery { PageNumber = page });
+            return await Mediator.Send(new GetPageProductDetailsQuery { PageNumber = page });
         }
 
         [HttpGet("get-all-product-detail")]
@@ -108,13 +108,8 @@ namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetailControlle
         [HttpDelete("delete-product")]
         public async Task<IActionResult> Delete([FromQuery] string id)
         {
-            var result = await Mediator.Send(new DeleteProductDetailCommand { id = id });
-            if (result == null)
-            {
-                return NotFound(new ResponseObject("Không có bản ghi"));
-            }
-
-            return Ok();
+            var result = await Mediator.Send(new DeleteProductDetailCommand { Id = id });
+            return Ok(result);
         }
 
 

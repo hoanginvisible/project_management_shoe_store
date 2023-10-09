@@ -7,20 +7,20 @@ namespace Domain.Entities
 {
     public class Customer : BaseAuditableEntity
     {
-        [MaxLength(EntityProperties.LENGTH_CODE)]
-        public string Code { get; set; }
+        [MaxLength(EntityProperties.LengthCode)]
+        public string? Code { get; set; }
 
-        [MaxLength(EntityProperties.LENGTH_NAME_PERSON)]
-        public string FullName { get; set; }
+        [MaxLength(EntityProperties.LengthNamePerson)]
+        public string? FullName { get; set; }
 
-        [MaxLength(EntityProperties.LENGTH_PHONE_NUMBER)]
-        public string PhoneNumber { get; set; }
+        [MaxLength(EntityProperties.LengthPhoneNumber)]
+        public string? PhoneNumber { get; set; }
 
-        [MaxLength(EntityProperties.LENGTH_EMAIL)]
-        public string Email { get; set; }
+        [MaxLength(EntityProperties.LengthEmail)]
+        public string? Email { get; set; }
 
-        [MaxLength(EntityProperties.LENGTH_ADDRESS)]
-        public string Address { get; set; }
+        [MaxLength(EntityProperties.LengthAddress)]
+        public string? Address { get; set; }
 
         public CustomerRank Rank { get; set; }
     }

@@ -6,10 +6,10 @@ namespace  Domain.Entities
 {
     public class Category : BaseAuditableEntity
     {
-        [MaxLength(EntityProperties.LENGTH_CODE)]
-        public string Code { get; set; }
+        [MaxLength(EntityProperties.LengthCode)]
+        public string? Code { get; set; }
 
-        [MaxLength(EntityProperties.LENGTH_NAME)]
-        public string Name { get; set; }
+        [MaxLength(EntityProperties.LengthName)]
+        public string? Name { get; set; }
     }
 }

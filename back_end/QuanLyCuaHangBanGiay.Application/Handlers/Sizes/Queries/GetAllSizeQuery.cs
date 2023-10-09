@@ -1,11 +1,9 @@
 ﻿using Data.Interfaces;
 using MediatR;
 
-namespace Service.Handlers.Products.Queries
+namespace Service.Handlers.Sizes.Queries
 {
-    public class GetAllSizeQuery : IRequest<IEnumerable<SizeDto>>
-    {
-    }
+    public class GetAllSizeQuery : IRequest<IEnumerable<SizeDto>>{}
 
     public class GetSizeQueryHandler : IRequestHandler<GetAllSizeQuery, IEnumerable<SizeDto>>
     {

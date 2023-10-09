@@ -3,6 +3,6 @@
     public enum SaleStatus
     {
         Active,
-        Not_Active
+        NotActive
     }
 }

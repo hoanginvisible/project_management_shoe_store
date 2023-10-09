@@ -8,7 +8,7 @@
             {
             }
 
-            public static string URL_API_ADMIN = "api/admin";
+            public static string UrlApiAdmin = "api/admin";
         }
     }
 }

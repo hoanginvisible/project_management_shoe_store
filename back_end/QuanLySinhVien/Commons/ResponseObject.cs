@@ -8,21 +8,31 @@
 
         public ResponseObject(object? data, string? message)
         {
-            ProcessReponseObject(data, message);
+            ProcessResponseObject(data, message);
         }
-        
+
+        public ResponseObject(object? data)
+        {
+            ProcessResponseObject(data, null);
+        }
+
         public ResponseObject(string? message)
         {
-            ProcessReponseObject(null, message);
+            ProcessResponseObject(null, message);
         }
-        
 
-        public void ProcessReponseObject(object? obj, string? mess)
+
+        public void ProcessResponseObject(object? obj, string? mess)
         {
             if (obj != null)
             {
                 IsSuccess = true;
                 Data = obj;
+            }
+
+            if (mess == null)
+            {
+                this.Message = "";
             }
 
             this.Message = mess;

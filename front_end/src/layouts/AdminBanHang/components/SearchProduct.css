@@ -1,0 +1,31 @@
+.container-search-product {
+    display: flex;
+    width: 50%;
+    height: 10%;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background: white;
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+.product-row {
+    display: flex;
+    align-items: center;
+}
+
+.div-1 {
+    width: 12%;
+    /*background-color: red;*/
+}
+
+.div-2 {
+    width: 68%;
+    /*background-color: #43a047;*/
+}
+.div-3 {
+    width: 20%;
+    /*background-color: blue;*/
+}
+

@@ -6,7 +6,7 @@ namespace Data.Interfaces
     {
         public Task<IEnumerable<T>> GetAll();
         public Task<IEnumerable<T>> GetByCondition(Expression<Func<T, bool>> expression);
-        Task<T> GetById(object id);
+        Task<T?> GetById(object id);
         Task Insert(IEnumerable<T> entity);
         Task Insert(T entity);
         void Update(T entity);

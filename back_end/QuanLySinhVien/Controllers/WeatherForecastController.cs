@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using QuanLySinhVien;
 
 namespace QuanLyCuaHangBanGiay.Controllers
 {
@@ -12,11 +11,11 @@ namespace QuanLyCuaHangBanGiay.Controllers
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-        public readonly ILogger<WeatherForecastController> _logger;
+        public readonly ILogger<WeatherForecastController> Logger;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
-            _logger = logger;
+            Logger = logger;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]

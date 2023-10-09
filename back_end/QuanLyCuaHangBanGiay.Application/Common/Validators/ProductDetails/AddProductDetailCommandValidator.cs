@@ -7,36 +7,15 @@ namespace Service.Common.Validators.ProductDetails
     {
         public AddProductDetailCommandValidator()
         {
-            RuleFor(x => x.idProduct).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
-            RuleFor(x => x.idBrand).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
-            RuleFor(x => x.idCategory).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
-            RuleFor(x => x.idColor).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
+            RuleFor(x => x.IdProduct).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
+            RuleFor(x => x.IdBrand).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
+            RuleFor(x => x.IdCategory).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
+            RuleFor(x => x.IdColor).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
             // RuleFor(x => x.Image).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
-            RuleFor(x => x.idMaterial).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
-            RuleFor(x => x.idSize).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
-            RuleFor(x => x.Price).NotNull().WithMessage("Vui lòng nhập dữ liệu đầy đủ").Must(x =>
-            {
-                if (x is Double)
-                {
-                    return true;
-                }
-
-                if (x > 0)
-                {
-                    return true;
-                }
-
-                return false;
-            }).WithMessage("Giá là kiểu số và phải lớn hơn 0");
-            RuleFor(x => x.Quantity).NotNull().WithMessage("Vui lòng nhập dữ liệu đầy đủ").Must(x =>
-            {
-                if (x is long && x > 0)
-                {
-                    return true;
-                }
-
-                return false;
-            }).WithMessage("Số lượng là kiểu số và lớn hơn 0");
+            RuleFor(x => x.IdMaterial).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
+            RuleFor(x => x.IdSize).NotEmpty().WithMessage("Vui lòng nhập dữ liệu đầy đủ");
+            RuleFor(x => x.Price).NotNull().WithMessage("Vui lòng nhập dữ liệu đầy đủ").Must(x => x is > 0).WithMessage("Giá là kiểu số và phải lớn hơn 0");
+            RuleFor(x => x.Quantity).NotNull().WithMessage("Vui lòng nhập dữ liệu đầy đủ").Must(x => x > 0).WithMessage("Số lượng là kiểu số và lớn hơn 0");
         }
     }
 }

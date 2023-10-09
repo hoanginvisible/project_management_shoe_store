@@ -13,15 +13,15 @@ builder.Services.AddSwaggerGen();
 builder.Services.RegisterContextDb(builder.Configuration);
 
 // Register Dependency Injection (add repository)
-builder.Services.RegisterDI();
+builder.Services.RegisterDi();
 
 // Register handler MediatR
 builder.Services.RegisterMediatR();
 
-builder.Services.AddCors(p => p.AddPolicy("myCors", builder =>
+builder.Services.AddCors(p => p.AddPolicy("myCors", policyBuilder =>
 {
     // builder.WithOrigins("http://localhost:3000");
-    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+    policyBuilder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
 }));
 // Register fluentvalidation
 // builder.Services.RegisterFluentValidation();
