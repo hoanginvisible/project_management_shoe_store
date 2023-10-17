@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Infrastructure.Exceptions;
+using Microsoft.AspNetCore.Mvc;
+using NLog;
 using QuanLyCuaHangBanGiay.Commons;
-using Service.Common.Validators.ProductDetails;
+using QuanLyCuaHangBanGiay.Commons.Validators.ProductDetails;
 using Service.Handlers.Brands.Queries;
 using Service.Handlers.Categorys.Queries;
 using Service.Handlers.Colors.Queries;
@@ -16,6 +18,8 @@ namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetailControlle
     [Route("api/admin/product-management")]
     public class ProductDetailController : ApiControllerBase
     {
+        private readonly Logger _logger = LogManager.GetLogger("MainLogger");
+
         // private readonly ITokenHandler _tokenHandler;
         //
         // public ProductDetailController(ITokenHandler tokenHandler)
@@ -30,45 +34,52 @@ namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetailControlle
         }
 
         [HttpGet("get-all-product-detail")]
-        public async Task<IEnumerable<ProductDetailDto>> GetAllProductDetails()
+        public async Task<IActionResult> GetAllProductDetails()
         {
-            return await Mediator.Send(new GetAllProductDetailQuery());
+            var result = await Mediator.Send(new GetAllProductDetailQuery());
+            return Ok(new ResponseObject(result));
         }
 
         [HttpGet("get-all-brand")]
-        public async Task<IEnumerable<BrandDto>> GetAllBrands()
+        public async Task<IActionResult> GetAllBrands()
         {
-            return await Mediator.Send(new GetAllBrandQuery());
+            var result = await Mediator.Send(new GetAllBrandQuery());
+            return Ok(new ResponseObject(result));
         }
 
         [HttpGet("get-all-product")]
-        public async Task<IEnumerable<ProductDto>> GetAllProdcuts()
+        public async Task<IActionResult> GetAllProdcuts()
         {
-            return await Mediator.Send(new GetAllProductQuery());
+            var result = await Mediator.Send(new GetAllProductQuery());
+            return Ok(new ResponseObject(result));
         }
 
         [HttpGet("get-all-category")]
-        public async Task<IEnumerable<CategoryDto>> GetAllCategory()
+        public async Task<IActionResult> GetAllCategory()
         {
-            return await Mediator.Send(new GetAllCategoryQuery());
+            var result = await Mediator.Send(new GetAllCategoryQuery());
+            return Ok(new ResponseObject(result));
         }
 
         [HttpGet("get-all-color")]
-        public async Task<IEnumerable<ColorDto>> GetAllColor()
+        public async Task<IActionResult> GetAllColor()
         {
-            return await Mediator.Send(new GetAllColorQuery());
+            var result = await Mediator.Send(new GetAllColorQuery());
+            return Ok(new ResponseObject(result));
         }
 
         [HttpGet("get-all-material")]
-        public async Task<IEnumerable<MaterialDto>> GetAllMaterial()
+        public async Task<IActionResult> GetAllMaterial()
         {
-            return await Mediator.Send(new GetAllMaterialQuery());
+            var result = await Mediator.Send(new GetAllMaterialQuery());
+            return Ok(new ResponseObject(result));
         }
 
         [HttpGet("get-all-size")]
-        public async Task<IEnumerable<SizeDto>> GetAllSize()
+        public async Task<IActionResult> GetAllSize()
         {
-            return await Mediator.Send(new GetAllSizeQuery());
+            var result = await Mediator.Send(new GetAllSizeQuery());
+            return Ok(new ResponseObject(result));
         }
 
         [HttpPost("create-product")]
@@ -78,12 +89,11 @@ namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetailControlle
             var results = await validation.ValidateAsync(productDetailCommand);
             if (!results.IsValid)
             {
-                foreach (var failure in results.Errors)
-                {
-                    return BadRequest(new ResponseObject(failure.ErrorMessage));
-                }
+                // _logger.Info("Bug API Create Product File ProductDetailController in AdminManagementProductDetailController");
+                // _logger.Debug("Lỗi ở chỗ này này anh em");
+                _logger.Error(results.Errors.FirstOrDefault()?.ErrorMessage!);
+                throw new RestApiException(results.Errors.FirstOrDefault()?.ErrorMessage!);
             }
-
             await Mediator.Send(productDetailCommand);
             return Ok();
         }
@@ -92,15 +102,8 @@ namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetailControlle
         public async Task<IActionResult> Update([FromBody] UpdateProductDetailCommand updateProductDetailCommand)
         {
             UpdateProductDetailCommandValidator validator = new();
-            var result = await validator.ValidateAsync(updateProductDetailCommand);
-            if (!result.IsValid)
-            {
-                foreach (var failure in result.Errors)
-                {
-                    return BadRequest(new ResponseObject(failure.ErrorMessage));
-                }
-            }
-
+            var results = await validator.ValidateAsync(updateProductDetailCommand);
+            if (!results.IsValid) throw new RestApiException(results.Errors.FirstOrDefault()?.ErrorMessage!);
             await Mediator.Send(updateProductDetailCommand);
             return Ok();
         }
@@ -114,10 +117,11 @@ namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetailControlle
 
 
         [HttpPost("search-product-detail")]
-        public async Task<IEnumerable<ProductDetailDto>> SearchProductDetail(
+        public async Task<IActionResult> SearchProductDetail(
             [FromBody] GetProductDetailByConditionQuery query)
         {
-            return await Mediator.Send(new GetProductDetailByConditionQuery());
+            var result = await Mediator.Send(new GetProductDetailByConditionQuery());
+            return Ok(new ResponseObject(result));
         }
 
         // [HttpPost("login")]

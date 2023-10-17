@@ -1,17 +1,14 @@
 ﻿using Data;
 using Data.Interfaces;
-using FluentValidation;
-using Infrastructure.Login;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Service.Common.Behaviors;
-using Service.Common.Validators.ProductDetails;
-using Service.Handlers.ProductDetails.Command;
 using Service.Handlers.ProductDetails.Queries.Handler;
 
-// using Service.Common.Behaviors;
+// using QuanLyCuaHangBanGiay.Service.Common.Behaviors;
+// using QuanLyCuaHangBanGiay.Service.Common.Validators.ProductDetails;
+
+// using QuanLyCuaHangBanGiay.Service.Common.Behaviors;
 
 namespace Infrastructure.Configurations
 {
@@ -34,7 +31,7 @@ namespace Infrastructure.Configurations
             // service.AddScoped<IBrandService, BrandService>();
             // service.AddScoped<IProductDetailService, ProductDetailService>();
             // service.AddScoped<IEmployerService, EmployerService>();
-            service.AddScoped<ITokenHandler, TokenHandler>();
+            // service.AddScoped<ITokenHandler, TokenHandler>();
         }
 
         public static void RegisterMediatR(this IServiceCollection service)
@@ -46,9 +43,9 @@ namespace Infrastructure.Configurations
 
         public static void RegisterFluentValidation(this IServiceCollection service)
         {
-            service.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidatorBehavior<,>));
+            // service.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidatorBehavior<,>));
             // service.AddTransient<IValidator<CreateProductDetailCommand>, AddProductDetailCommandValidator>();        }
-            service.AddTransient<IValidator<CreateProductDetailCommand>, AddProductDetailCommandValidator>();
+            // service.AddTransient<IValidator<CreateProductDetailCommand>, AddProductDetailCommandValidator>();
         }
     }
 }

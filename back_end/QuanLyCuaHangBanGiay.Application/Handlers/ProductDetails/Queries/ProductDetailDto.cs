@@ -2,7 +2,7 @@
 
 namespace Service.Handlers.ProductDetails.Queries
 {
-    public abstract class ProductDetailDto : BaseDto
+    public class ProductDetailDto : BaseDto
     {
         public string? NameProduct { get; set; }
         public string? NameBrand { get; set; }

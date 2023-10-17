@@ -9,7 +9,7 @@ namespace Data
     public sealed class Repository<T> : IRepository<T> where T : class
     {
         private readonly ApplicationDbContext _applicationDbContext;
-
+        
         public Repository(ApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
@@ -18,6 +18,7 @@ namespace Data
         public async Task<IEnumerable<T>> GetAll()
         {
             return await _applicationDbContext.Set<T>().ToListAsync();
+            
         }
 
         public async Task<IEnumerable<T>> GetByCondition(Expression<Func<T, bool>> expression)
@@ -33,16 +34,16 @@ namespace Data
 
         public async Task Insert(IEnumerable<T> entity)
         {
-            using var transactionScope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
+            await using var transactionScope = await _applicationDbContext.Database.BeginTransactionAsync();
             try
             {
                 await _applicationDbContext.Set<T>().AddRangeAsync(entity);
+                await transactionScope.CommitAsync();
                 await _applicationDbContext.SaveChangesAsync();
-                transactionScope.Complete();
             }
             catch (Exception)
             {
-                transactionScope.Dispose();
+                await transactionScope.RollbackAsync();
                 throw;
             }
         }
@@ -53,8 +54,8 @@ namespace Data
             try
             {
                 await _applicationDbContext.Set<T>().AddAsync(entity);
-                await _applicationDbContext.SaveChangesAsync();
                 transactionScope.Complete();
+                await _applicationDbContext.SaveChangesAsync();
             }
             catch (Exception)
             {
@@ -71,8 +72,8 @@ namespace Data
                 EntityEntry
                     entityEntry = _applicationDbContext.Entry(entity);
                 entityEntry.State = EntityState.Modified;
-                _applicationDbContext.SaveChangesAsync();
                 transactionScope.Complete();
+                _applicationDbContext.SaveChangesAsync();
             }
             catch (Exception)
             {
@@ -88,8 +89,8 @@ namespace Data
             {
                 EntityEntry entityEntry = _applicationDbContext.Entry(entity);
                 entityEntry.State = EntityState.Deleted;
-                _applicationDbContext.SaveChangesAsync();
                 transactionScope.Complete();
+                _applicationDbContext.SaveChangesAsync();
             }
             catch (Exception)
             {
@@ -109,8 +110,8 @@ namespace Data
                     _applicationDbContext.Set<T>().RemoveRange(entities);
                 }
 
-                _applicationDbContext.SaveChanges();
                 transactionScope.Complete();
+                _applicationDbContext.SaveChanges();
             }
             catch (Exception)
             {

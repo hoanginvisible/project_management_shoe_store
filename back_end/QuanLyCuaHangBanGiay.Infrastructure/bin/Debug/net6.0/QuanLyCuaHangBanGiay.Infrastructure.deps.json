@@ -8,10 +8,10 @@
     ".NETCoreApp,Version=v6.0": {
       "QuanLyCuaHangBanGiay.Infrastructure/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.22",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.21",
           "QuanLyCuaHangBanGiay.Application": "1.0.0",
-          "QuanLyCuaHangBanGiay.Data": "1.0.0"
+          "QuanLyCuaHangBanGiay.Data": "1.0.0",
+          "QuanLyCuaHangBanGiay.Service": "1.0.0"
         },
         "runtime": {
           "QuanLyCuaHangBanGiay.Infrastructure.dll": {}
@@ -61,14 +61,14 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.22": {
+      "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.23": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.10.0"
         },
         "runtime": {
           "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
-            "assemblyVersion": "6.0.22.0",
-            "fileVersion": "6.0.2223.42415"
+            "assemblyVersion": "6.0.23.0",
+            "fileVersion": "6.0.2323.48007"
           }
         }
       },
@@ -524,6 +524,15 @@
         "runtime": {
           "QuanLyCuaHangBanGiay.Domain.dll": {}
         }
+      },
+      "QuanLyCuaHangBanGiay.Service/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.23",
+          "QuanLyCuaHangBanGiay.Application": "1.0.0"
+        },
+        "runtime": {
+          "QuanLyCuaHangBanGiay.Service.dll": {}
+        }
       }
     }
   },
@@ -568,12 +577,12 @@
       "path": "mediatr.contracts/2.0.1",
       "hashPath": "mediatr.contracts.2.0.1.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.22": {
+    "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.23": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-+iuPmRkxfJ2vHoXifWqPJK8jppS8+iH3m1B8VMdgVWiC2U4q3JPBXx/kb7348HfClMPG+OcHpTUtmJkfUByvgg==",
-      "path": "microsoft.aspnetcore.authentication.jwtbearer/6.0.22",
-      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.6.0.22.nupkg.sha512"
+      "sha512": "sha512-T/TfelJX4wpENzYXIZ5mo/SpqBNTNWmuDpIXMnWF0fcBKCjB+JcOmD3hNW8tdw4/05/fs3rhtvrOuVl0D+6x1Q==",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/6.0.23",
+      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.6.0.23.nupkg.sha512"
     },
     "Microsoft.CSharp/4.5.0": {
       "type": "package",
@@ -880,6 +889,11 @@
       "sha512": ""
     },
     "QuanLyCuaHangBanGiay.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "QuanLyCuaHangBanGiay.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

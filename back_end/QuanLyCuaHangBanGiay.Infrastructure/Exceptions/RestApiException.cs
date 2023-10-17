@@ -2,8 +2,18 @@
 {
     public class RestApiException : Exception
     {
-        public RestApiException(string message) : base(message)
+        public override string Message { get; }
+        // public RestApiException() {}
+
+        public RestApiException(string message)
         {
+            Message = message;
+        }
+
+        public string GetMessage()
+        {
+            return Message;
         }
     }
 }
+

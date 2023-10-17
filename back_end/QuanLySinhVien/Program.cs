@@ -1,4 +1,6 @@
 using Infrastructure.Configurations;
+using Infrastructure.Exceptions;
+using NLog.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +20,14 @@ builder.Services.RegisterDi();
 // Register handler MediatR
 builder.Services.RegisterMediatR();
 
+builder.Services.AddLogging(logging =>
+{
+    logging.AddNLog();
+    logging.ClearProviders();
+    logging.SetMinimumLevel(LogLevel.Trace);
+});
+
+
 builder.Services.AddCors(p => p.AddPolicy("myCors", policyBuilder =>
 {
     // builder.WithOrigins("http://localhost:3000");
@@ -30,7 +40,8 @@ builder.Services.AddCors(p => p.AddPolicy("myCors", policyBuilder =>
 // builder.Services.RegisterTokenBear(builder.Configuration);
 
 var app = builder.Build();
-// Configure the HTTP request pipeline.
+app.Configuration();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

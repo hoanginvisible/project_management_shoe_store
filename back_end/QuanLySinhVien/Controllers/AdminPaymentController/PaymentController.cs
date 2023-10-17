@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using QuanLyCuaHangBanGiay.Commons;
 using Service.Handlers.Orders.Command;
 using Service.Handlers.Orders.Queries;
 using Service.Handlers.Products.Queries;
@@ -16,24 +17,24 @@ namespace QuanLyCuaHangBanGiay.Controllers.AdminPaymentController
         // }
 
         [HttpGet("get-order-pending")]
-        public async Task<IEnumerable<string>> GetOrderPending()
+        public async Task<IActionResult> GetOrderPending()
         {
             var result = await Mediator.Send(new GetIdOrderPendingPaymentQuery());
-            return result;
+            return Ok(new ResponseObject(result));
         }
 
         [HttpGet("get-top-product-hot")]
-        public async Task<IEnumerable<ProductTopTwentyHotDto>> GetTopProductHot()
+        public async Task<IActionResult> GetTopProductHot()
         {
             var result = await Mediator.Send(new GetTopTwentyProductHotQuery());
-            return result;
+            return Ok(new ResponseObject(result));
         }
 
         [HttpPost("create-order")]
         public async Task<IActionResult> CreateOrder()
         {
             var result = await Mediator.Send(new CreateOrderCommand());
-            return Ok(result);
+            return Ok(new ResponseObject(result));
         }
 
         [HttpDelete("delete-order")]

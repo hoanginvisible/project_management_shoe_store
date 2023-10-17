@@ -71,7 +71,7 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.22": {
+      "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.23": {
         "type": "package",
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.10.0"
@@ -904,6 +904,20 @@
         "runtime": {
           "bin/placeholder/QuanLyCuaHangBanGiay.Domain.dll": {}
         }
+      },
+      "QuanLyCuaHangBanGiay.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.23",
+          "QuanLyCuaHangBanGiay.Application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/QuanLyCuaHangBanGiay.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/QuanLyCuaHangBanGiay.Service.dll": {}
+        }
       }
     }
   },
@@ -995,10 +1009,10 @@
         "mediatr.contracts.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.22": {
-      "sha512": "+iuPmRkxfJ2vHoXifWqPJK8jppS8+iH3m1B8VMdgVWiC2U4q3JPBXx/kb7348HfClMPG+OcHpTUtmJkfUByvgg==",
+    "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.23": {
+      "sha512": "T/TfelJX4wpENzYXIZ5mo/SpqBNTNWmuDpIXMnWF0fcBKCjB+JcOmD3hNW8tdw4/05/fs3rhtvrOuVl0D+6x1Q==",
       "type": "package",
-      "path": "microsoft.aspnetcore.authentication.jwtbearer/6.0.22",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/6.0.23",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1006,7 +1020,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
         "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
-        "microsoft.aspnetcore.authentication.jwtbearer.6.0.22.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.6.0.23.nupkg.sha512",
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
@@ -2238,14 +2252,19 @@
       "type": "project",
       "path": "../QuanLyCuaHangBanGiay.Domain/QuanLyCuaHangBanGiay.Domain.csproj",
       "msbuildProject": "../QuanLyCuaHangBanGiay.Domain/QuanLyCuaHangBanGiay.Domain.csproj"
+    },
+    "QuanLyCuaHangBanGiay.Service/1.0.0": {
+      "type": "project",
+      "path": "../QuanLyCuaHangBanGiay.Service/QuanLyCuaHangBanGiay.Service.csproj",
+      "msbuildProject": "../QuanLyCuaHangBanGiay.Service/QuanLyCuaHangBanGiay.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.22",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.21",
       "QuanLyCuaHangBanGiay.Application >= 1.0.0",
-      "QuanLyCuaHangBanGiay.Data >= 1.0.0"
+      "QuanLyCuaHangBanGiay.Data >= 1.0.0",
+      "QuanLyCuaHangBanGiay.Service >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2280,6 +2299,9 @@
             },
             "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Data\\QuanLyCuaHangBanGiay.Data.csproj": {
               "projectPath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Data\\QuanLyCuaHangBanGiay.Data.csproj"
+            },
+            "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Service\\QuanLyCuaHangBanGiay.Service.csproj": {
+              "projectPath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Service\\QuanLyCuaHangBanGiay.Service.csproj"
             }
           }
         }
@@ -2294,10 +2316,6 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Authentication.JwtBearer": {
-            "target": "Package",
-            "version": "[6.0.22, )"
-          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[6.0.21, )"

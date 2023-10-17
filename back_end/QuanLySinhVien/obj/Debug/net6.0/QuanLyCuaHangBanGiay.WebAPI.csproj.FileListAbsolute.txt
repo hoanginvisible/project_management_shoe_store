@@ -315,3 +315,9 @@ D:\Learning .NET\Management_shoe_store\back_end\QuanLySinhVien\obj\Debug\net6.0\
 D:\Learning .NET\Management_shoe_store\back_end\QuanLySinhVien\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Application.dll
 D:\Learning .NET\Management_shoe_store\back_end\QuanLySinhVien\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Application.pdb
 D:\Learning .NET\Management_shoe_store\back_end\QuanLySinhVien\bin\Debug\net6.0\FluentValidation.dll
+D:\Learning .NET\Management_shoe_store\back_end\QuanLySinhVien\bin\Debug\net6.0\nlog.config
+D:\Learning .NET\Management_shoe_store\back_end\QuanLySinhVien\bin\Debug\net6.0\NLog.dll
+D:\Learning .NET\Management_shoe_store\back_end\QuanLySinhVien\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+D:\Learning .NET\Management_shoe_store\back_end\QuanLySinhVien\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+D:\Learning .NET\Management_shoe_store\back_end\QuanLySinhVien\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Service.dll
+D:\Learning .NET\Management_shoe_store\back_end\QuanLySinhVien\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Service.pdb

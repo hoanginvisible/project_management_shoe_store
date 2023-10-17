@@ -195,7 +195,7 @@ const TableProduct = () => {
                 setListProductDetail([data, ...listProductDetail]);
                 APIProductManagerment.getProductDetails()
                     .then((response) => {
-                        setListProductDetail(response.data);
+                        setListProductDetail(response.data.data);
                     })
                     .catch((error) => {
                         console.log(error);
@@ -233,7 +233,7 @@ const TableProduct = () => {
     useEffect(() => {
         APIProductManagerment.getProductDetails()
             .then((response) => {
-                setListProductDetail(response.data);
+                setListProductDetail(response.data.data);
             })
             .catch((error) => {
                 console.log(error);
@@ -241,7 +241,7 @@ const TableProduct = () => {
 
         APIProductManagerment.getProducts()
             .then((response) => {
-                setListProduct(response.data);
+                setListProduct(response.data.data);
             })
             .catch((error) => {
                 console.log(error);
@@ -249,7 +249,7 @@ const TableProduct = () => {
 
         APIProductManagerment.getBrands()
             .then((response) => {
-                setListBrand(response.data);
+                setListBrand(response.data.data);
             })
             .catch((error) => {
                 console.log(error);
@@ -257,7 +257,7 @@ const TableProduct = () => {
 
         APIProductManagerment.getCategorys()
             .then((response) => {
-                setListCategory(response.data);
+                setListCategory(response.data.data);
             })
             .catch((error) => {
                 console.log(error);
@@ -265,7 +265,7 @@ const TableProduct = () => {
 
         APIProductManagerment.getColors()
             .then((response) => {
-                setListColor(response.data);
+                setListColor(response.data.data);
             })
             .catch((error) => {
                 console.log(error);
@@ -273,7 +273,7 @@ const TableProduct = () => {
 
         APIProductManagerment.getMaterials()
             .then((response) => {
-                setListMaterial(response.data);
+                setListMaterial(response.data.data);
             })
             .catch((error) => {
                 console.log(error);
@@ -281,7 +281,7 @@ const TableProduct = () => {
 
         APIProductManagerment.getSizes()
             .then((response) => {
-                setListSize(response.data);
+                setListSize(response.data.data);
             })
             .catch((error) => {
                 console.log(error);

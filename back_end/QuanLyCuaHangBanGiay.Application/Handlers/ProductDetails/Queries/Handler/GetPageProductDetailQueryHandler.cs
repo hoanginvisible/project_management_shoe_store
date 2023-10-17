@@ -28,7 +28,7 @@ namespace Service.Handlers.ProductDetails.Queries.Handler
             JOIN Images i ON i.Id = pd.IdImage
             JOIN Material m ON m.Id = pd.IdMaterial
             JOIN Size s ON s.Id = pd.IdSize
-            ORDER BY pd.Id
+            ORDER BY pd.LastModifiedDate ASC
             OFFSET @PageSize * (@PageNumber - 1) ROWS
             FETCH NEXT @PageSize ROWS ONLY";
 

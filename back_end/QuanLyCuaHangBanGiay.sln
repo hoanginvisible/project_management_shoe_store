@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.WebAPI", "QuanLySinhVien\QuanLyCuaHangBanGiay.WebAPI.csproj", "{2F7896B5-666C-4E45-A1A7-46946D52EDB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuanLyCuaHangBanGiay.WebAPI", "QuanLySinhVien\QuanLyCuaHangBanGiay.WebAPI.csproj", "{2F7896B5-666C-4E45-A1A7-46946D52EDB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.Domain", "QuanLyCuaHangBanGiay.Domain\QuanLyCuaHangBanGiay.Domain.csproj", "{479A3008-9D08-4825-8DFA-4988F42CE562}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuanLyCuaHangBanGiay.Domain", "QuanLyCuaHangBanGiay.Domain\QuanLyCuaHangBanGiay.Domain.csproj", "{479A3008-9D08-4825-8DFA-4988F42CE562}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.Application", "QuanLyCuaHangBanGiay.Application\QuanLyCuaHangBanGiay.Application.csproj", "{0DB47B42-179B-41EC-B831-B50E83775D46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuanLyCuaHangBanGiay.Application", "QuanLyCuaHangBanGiay.Application\QuanLyCuaHangBanGiay.Application.csproj", "{0DB47B42-179B-41EC-B831-B50E83775D46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.Data", "QuanLyCuaHangBanGiay.Data\QuanLyCuaHangBanGiay.Data.csproj", "{5F6638EF-C9F9-4DEB-B53E-B7B75968D412}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuanLyCuaHangBanGiay.Data", "QuanLyCuaHangBanGiay.Data\QuanLyCuaHangBanGiay.Data.csproj", "{5F6638EF-C9F9-4DEB-B53E-B7B75968D412}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.Infrastructure", "QuanLyCuaHangBanGiay.Infrastructure\QuanLyCuaHangBanGiay.Infrastructure.csproj", "{B2852D9A-0A8C-41BC-AD78-F6F3164DDB45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuanLyCuaHangBanGiay.Infrastructure", "QuanLyCuaHangBanGiay.Infrastructure\QuanLyCuaHangBanGiay.Infrastructure.csproj", "{B2852D9A-0A8C-41BC-AD78-F6F3164DDB45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.UnitTest", "QuanLyCuaHangBanGiay.UnitTest\QuanLyCuaHangBanGiay.UnitTest.csproj", "{6EFFBD92-FCAD-4964-8CB4-916FAD49FAE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.Service", "QuanLyCuaHangBanGiay.Service\QuanLyCuaHangBanGiay.Service.csproj", "{ABEA3BC3-59AF-44FE-B821-FB69728AEA02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{B2852D9A-0A8C-41BC-AD78-F6F3164DDB45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2852D9A-0A8C-41BC-AD78-F6F3164DDB45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2852D9A-0A8C-41BC-AD78-F6F3164DDB45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EFFBD92-FCAD-4964-8CB4-916FAD49FAE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EFFBD92-FCAD-4964-8CB4-916FAD49FAE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EFFBD92-FCAD-4964-8CB4-916FAD49FAE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EFFBD92-FCAD-4964-8CB4-916FAD49FAE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABEA3BC3-59AF-44FE-B821-FB69728AEA02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABEA3BC3-59AF-44FE-B821-FB69728AEA02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABEA3BC3-59AF-44FE-B821-FB69728AEA02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABEA3BC3-59AF-44FE-B821-FB69728AEA02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

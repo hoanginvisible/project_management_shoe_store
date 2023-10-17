@@ -22,7 +22,7 @@ const BanHang = () => {
         APIBanHang.getOrderPending().then(
             (res) => {
                 const dataArray = [];
-                res.data.forEach((order) => {
+                res.data.data.forEach((order) => {
                     const data = {
                         id: order,
                         name: `Hóa đơn ${dataArray.length + 1}`
@@ -41,7 +41,7 @@ const BanHang = () => {
         APIBanHang.createOrder().then(
             (res) => {
                 const newOrder = [...listOrder, {
-                    id: res.data,
+                    id: res.data.data,
                     name: `Hóa đơn ${listOrder.length + 1}`
                 }]
                 setlistOrder(newOrder);
@@ -69,7 +69,7 @@ const BanHang = () => {
     const handleSearchTopProduct = () => {
         APIBanHang.getTopProductHot().then(
             (res) => {
-                setListProductSearch(res.data);
+                setListProductSearch(res.data.data);
                 console.log(res.data);
             },
             (err) => {

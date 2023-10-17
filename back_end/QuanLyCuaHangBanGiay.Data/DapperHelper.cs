@@ -23,7 +23,7 @@ namespace Data
             await using var transaction = dbConnection.BeginTransaction();
             try
             {
-                await dbConnection.ExecuteAsync(query, parameters, dbTransaction,
+                await dbConnection.ExecuteAsync(query, parameters, transaction,
                     commandType: CommandType.Text);
                 await transaction.CommitAsync();
             }
@@ -35,15 +35,14 @@ namespace Data
         }
 
 
-        public async Task<T> ExecuteReturnScalar<T>(string query, DynamicParameters? parameters,
-            IDbTransaction? dbTransaction = null)
+        public async Task<T?> ExecuteReturnScalar<T>(string query, DynamicParameters? parameters)
         {
             await using var dbConnection = new SqlConnection(_connectString);
             await dbConnection.OpenAsync();
             await using var transaction = dbConnection.BeginTransaction();
             try
             {
-                var result = await dbConnection.QueryFirstOrDefaultAsync<T>(query, parameters, dbTransaction,
+                var result = await dbConnection.QueryFirstOrDefaultAsync<T>(query, parameters, transaction,
                     commandType: CommandType.Text);
                 await transaction.CommitAsync();
                 return result;
@@ -63,8 +62,8 @@ namespace Data
             await using var transaction = dbConnection.BeginTransaction();
             try
             {
-                var result = await dbConnection.QueryAsync<T>(query, parameters, dbTransaction,
-                    commandType: CommandType.Text);
+                var result =
+                    await dbConnection.QueryAsync<T>(query, parameters, transaction, commandType: CommandType.Text);
                 await transaction.CommitAsync();
                 return result;
             }
@@ -83,7 +82,7 @@ namespace Data
             await using var transaction = dbConnection.BeginTransaction();
             try
             {
-                var result = await dbConnection.QueryAsync<T>(query, parameters, dbTransaction,
+                var result = await dbConnection.QueryAsync<T>(query, parameters, transaction,
                     commandType: CommandType.StoredProcedure);
                 await transaction.CommitAsync();
                 return result;

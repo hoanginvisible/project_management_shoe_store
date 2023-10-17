@@ -1,27 +1,28 @@
-﻿using Data.Interfaces;
-using Domain.Entities;
+﻿using Dapper;
+using Data.Interfaces;
 using MediatR;
 
 namespace Service.Handlers.ProductDetails.Command.Handler
 {
     public class DeleteProductDetailCommandHandler : IRequestHandler<DeleteProductDetailCommand, string>
     {
-        private readonly IRepository<ProductDetail> _repository;
+        private readonly IDapperHelper _dapperHelper;
 
-        public DeleteProductDetailCommandHandler(IRepository<ProductDetail> repository)
+        public DeleteProductDetailCommandHandler(IDapperHelper dapperHelper)
         {
-            _repository = repository;
+            _dapperHelper = dapperHelper;
         }
 
-        public async Task<string> Handle(DeleteProductDetailCommand request, CancellationToken cancellationToken)
+        public Task<string> Handle(DeleteProductDetailCommand request, CancellationToken cancellationToken)
         {
-            if (request.Id != null)
-            {
-                var productDetail = await _repository.GetById(request.Id);
-                if (productDetail != null) _repository.Delete(productDetail);
-            }
-
-            return request.Id!;
+            var query = $@"
+                DELETE FROM ProductDetail
+                WHERE ProductDetail.Id = :Id
+            ";
+            var parameter = new DynamicParameters();
+            parameter.Add("@Id", request.Id);
+            _dapperHelper.ExecuteNoReturn(query, parameter);
+            return Task.FromResult(request.Id!);
         }
     }
 }

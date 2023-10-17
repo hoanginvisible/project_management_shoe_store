@@ -7,8 +7,7 @@ namespace Data.Interfaces
     {
         Task ExecuteNoReturn(string query, DynamicParameters? parameters = null, IDbTransaction? dbTransaction = null);
 
-        Task<T> ExecuteReturnScalar<T>(string query, DynamicParameters? parameters = null,
-            IDbTransaction? dbTransaction = null);
+        Task<T?> ExecuteReturnScalar<T>(string query, DynamicParameters? parameters = null);
 
         Task<IEnumerable<T>> ExecuteSqlReturnList<T>(string query, DynamicParameters? parameters = null,
             IDbTransaction? dbTransaction = null);

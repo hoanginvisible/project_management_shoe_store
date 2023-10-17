@@ -74,3 +74,5 @@ D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Infrastruct
 D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Infrastructure\obj\Debug\net6.0\ref\QuanLyCuaHangBanGiay.Infrastructure.dll
 D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Infrastructure\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Application.dll
 D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Infrastructure\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Application.pdb
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Infrastructure\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Service.dll
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Infrastructure\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Service.pdb
