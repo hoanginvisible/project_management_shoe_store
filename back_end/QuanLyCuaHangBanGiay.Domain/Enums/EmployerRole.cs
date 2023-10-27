@@ -2,7 +2,7 @@
 {
     public enum EmployerRole
     {
-        Employee,
-        Owner
+        Admin,
+        User
     }
 }

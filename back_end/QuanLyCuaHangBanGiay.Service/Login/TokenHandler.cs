@@ -1,6 +1,7 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -18,7 +19,7 @@ namespace Service.Login
             _configuration = configuration;
         }
 
-        public async Task<string> CreateToken(GetEmployerByEmailAndPasswordQuery employer)
+        public async Task<string> CreateToken(EmployerDto employer)
         {
             var claims = new[]
             {
@@ -39,7 +40,8 @@ namespace Service.Login
                     ClaimValueTypes.String, _configuration["TokenBear:Issuer"]),
                 // new Claim(ClaimTypes.NameIdentifier, employer.Id.ToString(), ClaimValueTypes.String, ""),
                 new Claim(ClaimTypes.Name, employer.Email!, ClaimValueTypes.String, _configuration["TokenBear:Issuer"]),
-                new Claim("Username", employer.Email!, ClaimValueTypes.String, "")
+                new Claim("Username", employer.Email!, ClaimValueTypes.String, ""),
+                new Claim(ClaimTypes.Role, employer.Role == 0 ? "ADMIN" : "USER", ClaimValueTypes.String, "")
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["TokenBear:SignatureKey"]));
             var credential = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -58,24 +60,41 @@ namespace Service.Login
 
         public Task ValidationToken(TokenValidatedContext context)
         {
-            var claims = context.Principal?.Claims.ToList();
-            if (claims != null && claims.Count == 0)
+            var claims = context.Principal.Claims.ToList();
+            if (claims is { Count: 0 })
             {
-                context.Fail("This token contains no infomation");
+                context.Fail("This token contains no information");
                 return Task.CompletedTask;
-            }
+            } 
 
-            var identity = (ClaimsIdentity)context.Principal?.Identities!;
+            var identity = context.Principal.Identity as ClaimsIdentity;
             if (identity.FindFirst(JwtRegisteredClaimNames.Iss) == null)
             {
                 context.Fail("This  token is not issued by point entry");
                 return Task.CompletedTask;
             }
-
-            if (identity.FindFirst("Username") == null)
-            {
-                // string? username = identity.FindFirst("Username")?.Value;
-            }
+            
+            
+            // if (identity.FindFirst("Username") != null)
+            // {
+            //     string? username = identity.FindFirst("Username").Value;
+            //     var result =  Mediator.Send(new GetEmployerByEmailAndPasswordQuery());
+            // }
+            
+            
+            // if (identity.FindFirst("Role") == null)
+            // {
+            //     // string? username = identity.FindFirst("Username")?.Value;
+            //     context.Fail("You don't have access");
+            //     return Task.CompletedTask;
+            // }
+            
+            // if (identity.FindFirst(ClaimTypes.Role).Value != "ADMIN")
+            // {
+            //     // string? username = identity.FindFirst("Username")?.Value;
+            //     context.Fail("You don't have access");
+            //     return Task.CompletedTask;
+            // }
 
             return Task.CompletedTask;
         }

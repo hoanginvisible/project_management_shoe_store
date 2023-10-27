@@ -36,14 +36,15 @@ namespace Infrastructure.Configurations
                     };
                     options.Events = new JwtBearerEvents
                     {
+                        // 2. Controller nào có annotation Author đều sẽ được đi vào OnTokenValidated
                         OnTokenValidated = context =>
                         {
                             var tokenHandler = context.HttpContext.RequestServices.GetRequiredService<ITokenHandler>();
                             return tokenHandler.ValidationToken(context);
                         },
                         OnAuthenticationFailed = _ => Task.CompletedTask,
-                        OnMessageReceived = _ => Task.CompletedTask,
-                        OnChallenge = _ => Task.CompletedTask
+                        OnMessageReceived = _ => Task.CompletedTask, // 1. Phương thức này sẽ được gọi đầu tiên
+                        OnChallenge = _ => Task.CompletedTask // 3. Nếu validate thỏa mãn sẽ xuống OnChallenge để đi vào controller
                     };
                 });
         }

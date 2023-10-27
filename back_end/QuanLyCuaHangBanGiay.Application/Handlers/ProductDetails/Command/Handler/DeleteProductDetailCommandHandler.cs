@@ -18,6 +18,7 @@ namespace Service.Handlers.ProductDetails.Command.Handler
             var query = $@"
                 DELETE FROM ProductDetail
                 WHERE ProductDetail.Id = :Id
+                
             ";
             var parameter = new DynamicParameters();
             parameter.Add("@Id", request.Id);

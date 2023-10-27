@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "LZLRRqMMzrtDfFz7b/xN6v52GyThTmQBGnpWdu4pdzl1aU1Ed9LedIrcDRaQcN5v8skNp9wyZ5ConJ+nGJz5Ew==",
+  "success": true,
+  "projectFilePath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Core.Domain\\QuanLyCuaHangBanGiay.Core.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hoang\\.nuget\\packages\\dapper\\2.1.15\\dapper.2.1.15.nupkg.sha512"
+  ],
+  "logs": []
+}

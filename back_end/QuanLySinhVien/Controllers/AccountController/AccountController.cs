@@ -24,6 +24,6 @@ public class AccountController : ApiControllerBase
             throw new RestApiException("Account not found!");
         }
 
-        return await Task.Factory.StartNew(() => { return Ok(_tokenHandler.CreateToken(employer)); });
+        return await Task.Factory.StartNew(() => Ok(_tokenHandler.CreateToken(result)));
     }
 }

@@ -1,5 +1,9 @@
+using System.Text;
 using Infrastructure.Configurations;
 using Infrastructure.Exceptions;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.IdentityModel.Tokens;
 using NLog.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +20,7 @@ builder.Services.RegisterContextDb(builder.Configuration);
 
 // Register Dependency Injection (add repository)
 builder.Services.RegisterDi();
+// builder.Services.AddSingleton<IAuthorizationPolicyProvider, CustomAuthorizationPolicyProvider>();
 
 // Register handler MediatR
 builder.Services.RegisterMediatR();
@@ -37,7 +42,7 @@ builder.Services.AddCors(p => p.AddPolicy("myCors", policyBuilder =>
 // builder.Services.RegisterFluentValidation();
 
 // Register Authentication Token
-// builder.Services.RegisterTokenBear(builder.Configuration);
+builder.Services.RegisterTokenBear(builder.Configuration);
 
 var app = builder.Build();
 app.Configuration();

@@ -1,4 +1,6 @@
-﻿using Infrastructure.Exceptions;
+﻿using Domain.Enums;
+using Infrastructure.Exceptions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NLog;
 using QuanLyCuaHangBanGiay.Commons;
@@ -14,7 +16,7 @@ using Service.Handlers.Sizes.Queries;
 
 namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetailController
 {
-    // [Authorize]
+    [Authorize(Roles = "ADMIN,USER")]
     [Route("api/admin/product-management")]
     public class ProductDetailController : ApiControllerBase
     {
@@ -26,7 +28,7 @@ namespace QuanLyCuaHangBanGiay.Controllers.AdminManagementProductDetailControlle
         // {
         //     _tokenHandler = tokenHandler;
         // }
-
+        
         [HttpGet("get-page-product-detail")]
         public async Task<IEnumerable<ProductDetailDto>> GetProductDetails([FromQuery] int page = 1)
         {

@@ -31,7 +31,7 @@ namespace Service.Handlers.ProductDetails.Queries.Handler
             ORDER BY pd.LastModifiedDate ASC
             OFFSET @PageSize * (@PageNumber - 1) ROWS
             FETCH NEXT @PageSize ROWS ONLY";
-
+           
             var parameters = new DynamicParameters();
             parameters.Add("@PageSize", request.PageSize);
             parameters.Add("@PageNumber", request.PageNumber);

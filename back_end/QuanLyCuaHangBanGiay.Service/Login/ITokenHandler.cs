@@ -5,7 +5,7 @@ namespace Service.Login
 {
     public interface ITokenHandler
     {
-        Task<string> CreateToken(GetEmployerByEmailAndPasswordQuery employerDto);
+        Task<string> CreateToken(EmployerDto employerDto);
         Task ValidationToken(TokenValidatedContext context);
     }
 }

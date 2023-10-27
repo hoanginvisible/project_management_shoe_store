@@ -18,7 +18,7 @@ namespace Service.Handlers.Employers.Queries.Handler
             CancellationToken cancellationToken)
         {
             string query = $@"
-                SELECT Email, Password FROM Employers
+                SELECT Email, Password, Role FROM Employers
                 WHERE Email = @Email AND Password = @Password";
             var parameters = new DynamicParameters();
             parameters.Add("@Email", request.Email);

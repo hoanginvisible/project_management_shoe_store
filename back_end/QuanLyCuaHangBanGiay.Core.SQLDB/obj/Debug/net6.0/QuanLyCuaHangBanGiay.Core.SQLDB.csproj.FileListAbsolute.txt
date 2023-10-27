@@ -1,0 +1,15 @@
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Core.SQLDB\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Core.SQLDB.deps.json
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Core.SQLDB\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Core.SQLDB.dll
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Core.SQLDB\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Core.SQLDB.pdb
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Core.SQLDB\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Core.Domain.dll
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Core.SQLDB\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Core.Domain.pdb
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Core.SQLDB\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Core.SQLDB.csproj.AssemblyReference.cache
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Core.SQLDB\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Core.SQLDB.GeneratedMSBuildEditorConfig.editorconfig
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Core.SQLDB\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Core.SQLDB.AssemblyInfoInputs.cache
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Core.SQLDB\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Core.SQLDB.AssemblyInfo.cs
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Core.SQLDB\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Core.SQLDB.csproj.CoreCompileInputs.cache
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Core.SQLDB\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Core.SQLDB.csproj.CopyComplete
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Core.SQLDB\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Core.SQLDB.dll
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Core.SQLDB\obj\Debug\net6.0\refint\QuanLyCuaHangBanGiay.Core.SQLDB.dll
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Core.SQLDB\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Core.SQLDB.pdb
+D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Core.SQLDB\obj\Debug\net6.0\ref\QuanLyCuaHangBanGiay.Core.SQLDB.dll
