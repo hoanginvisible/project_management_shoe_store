@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v6.0": {
       "QuanLyCuaHangBanGiay.Module.SQLDB/1.0.0": {
         "dependencies": {
-          "QuanLyCuaHangBanGiay.Core.Domain": "1.0.0",
           "QuanLyCuaHangBanGiay.Core.SQLDB": "1.0.0",
           "QuanLyCuaHangBanGiay.Module.Domain": "1.0.0"
         },

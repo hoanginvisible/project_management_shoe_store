@@ -9,3 +9,14 @@ D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Module.Doma
 D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Module.Domain\obj\Debug\net6.0\refint\QuanLyCuaHangBanGiay.Module.Domain.dll
 D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Module.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Module.Domain.pdb
 D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Module.Domain\obj\Debug\net6.0\ref\QuanLyCuaHangBanGiay.Module.Domain.dll
+D:\Learning .NET\Management_shoe_store\back_end\Module\QuanLyCuaHangBanGiay.Module.Domain\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Module.Domain.deps.json
+D:\Learning .NET\Management_shoe_store\back_end\Module\QuanLyCuaHangBanGiay.Module.Domain\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Module.Domain.dll
+D:\Learning .NET\Management_shoe_store\back_end\Module\QuanLyCuaHangBanGiay.Module.Domain\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Module.Domain.pdb
+D:\Learning .NET\Management_shoe_store\back_end\Module\QuanLyCuaHangBanGiay.Module.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Module.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Learning .NET\Management_shoe_store\back_end\Module\QuanLyCuaHangBanGiay.Module.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Module.Domain.AssemblyInfoInputs.cache
+D:\Learning .NET\Management_shoe_store\back_end\Module\QuanLyCuaHangBanGiay.Module.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Module.Domain.AssemblyInfo.cs
+D:\Learning .NET\Management_shoe_store\back_end\Module\QuanLyCuaHangBanGiay.Module.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Module.Domain.csproj.CoreCompileInputs.cache
+D:\Learning .NET\Management_shoe_store\back_end\Module\QuanLyCuaHangBanGiay.Module.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Module.Domain.dll
+D:\Learning .NET\Management_shoe_store\back_end\Module\QuanLyCuaHangBanGiay.Module.Domain\obj\Debug\net6.0\refint\QuanLyCuaHangBanGiay.Module.Domain.dll
+D:\Learning .NET\Management_shoe_store\back_end\Module\QuanLyCuaHangBanGiay.Module.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Module.Domain.pdb
+D:\Learning .NET\Management_shoe_store\back_end\Module\QuanLyCuaHangBanGiay.Module.Domain\obj\Debug\net6.0\ref\QuanLyCuaHangBanGiay.Module.Domain.dll

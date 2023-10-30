@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>QuanLyCuaHangBanGiay.Module.WebAPIu</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\V1\Delete\" />
+    <Folder Include="Controllers\V1\Get\" />
+    <Folder Include="Controllers\V1\Mapster\" />
+    <Folder Include="Controllers\V1\Post\" />
+    <Folder Include="Controllers\V1\Pust\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Infrastructure\QuanLyCuaHangBanGiay.Core.WebAPI\QuanLyCuaHangBanGiay.Core.WebAPI.csproj" />
+    <ProjectReference Include="..\..\QuanLyCuaHangBanGiay.Module.ApplicationService\QuanLyCuaHangBanGiay.Module.ApplicationService.csproj" />
+    <ProjectReference Include="..\QuanLyCuaHangBanGiay.Module.SQLDB\QuanLyCuaHangBanGiay.Module.SQLDB.csproj" />
+  </ItemGroup>
+
+</Project>

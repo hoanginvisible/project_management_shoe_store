@@ -10,3 +10,15 @@ D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Core.Domain
 D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Core.Domain\obj\Debug\net6.0\refint\QuanLyCuaHangBanGiay.Core.Domain.dll
 D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Core.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Core.Domain.pdb
 D:\Learning .NET\Management_shoe_store\back_end\QuanLyCuaHangBanGiay.Core.Domain\obj\Debug\net6.0\ref\QuanLyCuaHangBanGiay.Core.Domain.dll
+D:\Learning .NET\Management_shoe_store\back_end\Core\QuanLyCuaHangBanGiay.Core.Domain\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Core.Domain.deps.json
+D:\Learning .NET\Management_shoe_store\back_end\Core\QuanLyCuaHangBanGiay.Core.Domain\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Core.Domain.dll
+D:\Learning .NET\Management_shoe_store\back_end\Core\QuanLyCuaHangBanGiay.Core.Domain\bin\Debug\net6.0\QuanLyCuaHangBanGiay.Core.Domain.pdb
+D:\Learning .NET\Management_shoe_store\back_end\Core\QuanLyCuaHangBanGiay.Core.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Core.Domain.csproj.AssemblyReference.cache
+D:\Learning .NET\Management_shoe_store\back_end\Core\QuanLyCuaHangBanGiay.Core.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Core.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Learning .NET\Management_shoe_store\back_end\Core\QuanLyCuaHangBanGiay.Core.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Core.Domain.AssemblyInfoInputs.cache
+D:\Learning .NET\Management_shoe_store\back_end\Core\QuanLyCuaHangBanGiay.Core.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Core.Domain.AssemblyInfo.cs
+D:\Learning .NET\Management_shoe_store\back_end\Core\QuanLyCuaHangBanGiay.Core.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Core.Domain.csproj.CoreCompileInputs.cache
+D:\Learning .NET\Management_shoe_store\back_end\Core\QuanLyCuaHangBanGiay.Core.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Core.Domain.dll
+D:\Learning .NET\Management_shoe_store\back_end\Core\QuanLyCuaHangBanGiay.Core.Domain\obj\Debug\net6.0\refint\QuanLyCuaHangBanGiay.Core.Domain.dll
+D:\Learning .NET\Management_shoe_store\back_end\Core\QuanLyCuaHangBanGiay.Core.Domain\obj\Debug\net6.0\QuanLyCuaHangBanGiay.Core.Domain.pdb
+D:\Learning .NET\Management_shoe_store\back_end\Core\QuanLyCuaHangBanGiay.Core.Domain\obj\Debug\net6.0\ref\QuanLyCuaHangBanGiay.Core.Domain.dll

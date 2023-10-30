@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.Core.SQLDB", "Core\Infrastructure\QuanLyCuaHangBanGiay.Core.SQLDB\QuanLyCuaHangBanGiay.Core.SQLDB.csproj", "{D27D9766-8779-4BB3-851F-DCE6E3AB63AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.Core.WebAPICore", "Core\Infrastructure\QuanLyCuaHangBanGiay.Core.WebAPICore\QuanLyCuaHangBanGiay.Core.WebAPICore.csproj", "{0F8B7BD6-DD90-4456-933E-72B828A63199}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.Core.WebAPI", "Core\Infrastructure\QuanLyCuaHangBanGiay.Core.WebAPI\QuanLyCuaHangBanGiay.Core.WebAPI.csproj", "{0F8B7BD6-DD90-4456-933E-72B828A63199}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.Core.ApplicationService", "Core\QuanLyCuaHangBanGiay.Core.ApplicationService\QuanLyCuaHangBanGiay.Core.ApplicationService.csproj", "{96FFAB3A-BAB4-4512-9EB6-B85C65A26EF7}"
 EndProject
@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.Core.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.Module.SQLDB", "Module\Infrastructure\QuanLyCuaHangBanGiay.Module.SQLDB\QuanLyCuaHangBanGiay.Module.SQLDB.csproj", "{3A2CE662-B7E5-4B23-A103-98FA651244EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.Module.WebAPIModule", "Module\Infrastructure\QuanLyCuaHangBanGiay.Module.WebAPIModule\QuanLyCuaHangBanGiay.Module.WebAPIModule.csproj", "{B8EE648E-6694-484D-B59E-70762833239E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.Module.WebAPI", "Module\Infrastructure\QuanLyCuaHangBanGiay.Module.WebAPI\QuanLyCuaHangBanGiay.Module.WebAPI.csproj", "{B8EE648E-6694-484D-B59E-70762833239E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyCuaHangBanGiay.Module.ApplicationService", "Module\QuanLyCuaHangBanGiay.Module.ApplicationService\QuanLyCuaHangBanGiay.Module.ApplicationService.csproj", "{EB80C851-B031-4DCA-A5F9-F46739DABD46}"
 EndProject
