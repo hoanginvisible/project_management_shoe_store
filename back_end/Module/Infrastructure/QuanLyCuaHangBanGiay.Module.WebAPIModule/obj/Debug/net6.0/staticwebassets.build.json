@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "f0oCkElZTxGjlZNgmDFGlEdR2IOf5usOJLtejBVwBXc=",
+  "Source": "QuanLyCuaHangBanGiay.Module.WebAPIModule",
+  "BasePath": "_content/QuanLyCuaHangBanGiay.Module.WebAPIModule",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "D:\\Learning .NET\\Management_shoe_store\\back_end\\QuanLyCuaHangBanGiay.Core.WebAPICore\\QuanLyCuaHangBanGiay.Core.WebAPICore.csproj",
+      "Version": 2,
+      "Source": "QuanLyCuaHangBanGiay.Core.WebAPICore",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

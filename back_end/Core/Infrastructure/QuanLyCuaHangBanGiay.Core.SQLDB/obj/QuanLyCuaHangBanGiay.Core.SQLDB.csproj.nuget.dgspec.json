@@ -1,0 +1,138 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Learning .NET\\Management_shoe_store\\back_end\\Core\\Infrastructure\\QuanLyCuaHangBanGiay.Core.SQLDB\\QuanLyCuaHangBanGiay.Core.SQLDB.csproj": {}
+  },
+  "projects": {
+    "D:\\Learning .NET\\Management_shoe_store\\back_end\\Core\\Infrastructure\\QuanLyCuaHangBanGiay.Core.SQLDB\\QuanLyCuaHangBanGiay.Core.SQLDB.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Learning .NET\\Management_shoe_store\\back_end\\Core\\Infrastructure\\QuanLyCuaHangBanGiay.Core.SQLDB\\QuanLyCuaHangBanGiay.Core.SQLDB.csproj",
+        "projectName": "QuanLyCuaHangBanGiay.Core.SQLDB",
+        "projectPath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\Core\\Infrastructure\\QuanLyCuaHangBanGiay.Core.SQLDB\\QuanLyCuaHangBanGiay.Core.SQLDB.csproj",
+        "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
+        "outputPath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\Core\\Infrastructure\\QuanLyCuaHangBanGiay.Core.SQLDB\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Learning .NET\\Management_shoe_store\\back_end\\Core\\QuanLyCuaHangBanGiay.Core.Domain\\QuanLyCuaHangBanGiay.Core.Domain.csproj": {
+                "projectPath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\Core\\QuanLyCuaHangBanGiay.Core.Domain\\QuanLyCuaHangBanGiay.Core.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Learning .NET\\Management_shoe_store\\back_end\\Core\\QuanLyCuaHangBanGiay.Core.Domain\\QuanLyCuaHangBanGiay.Core.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Learning .NET\\Management_shoe_store\\back_end\\Core\\QuanLyCuaHangBanGiay.Core.Domain\\QuanLyCuaHangBanGiay.Core.Domain.csproj",
+        "projectName": "QuanLyCuaHangBanGiay.Core.Domain",
+        "projectPath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\Core\\QuanLyCuaHangBanGiay.Core.Domain\\QuanLyCuaHangBanGiay.Core.Domain.csproj",
+        "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
+        "outputPath": "D:\\Learning .NET\\Management_shoe_store\\back_end\\Core\\QuanLyCuaHangBanGiay.Core.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.15, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

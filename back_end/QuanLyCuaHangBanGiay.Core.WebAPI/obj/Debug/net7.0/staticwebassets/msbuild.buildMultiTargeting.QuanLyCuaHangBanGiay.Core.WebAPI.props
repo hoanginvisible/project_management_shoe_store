@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\QuanLyCuaHangBanGiay.Core.WebAPI.props" />
-</Project>

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Brand\Command\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Core\Infrastructure\QuanLyCuaHangBanGiay.Core.SQLDB\QuanLyCuaHangBanGiay.Core.SQLDB.csproj" />
+      <ProjectReference Include="..\..\QuanLyCuaHangBanGiay.Module.Domain\QuanLyCuaHangBanGiay.Module.Domain.csproj" />
+    </ItemGroup>
+
+</Project>
